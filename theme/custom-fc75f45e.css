@@ -1,10 +1,10 @@
 /* Custom styling for section titles (part titles) in sidebar */
-/* .chapter li.part-title {
+.chapter li.part-title {
     font-weight: bold;
     font-size: 1.2em;
-    color: var(--sidebar-active);
-    background: linear-gradient(90deg, var(--sidebar-bg) 0%, var(--sidebar-spacer) 100%);
-    border-top: 2px solid var(--sidebar-spacer);
+    color: var(--sidebar-fg);
+    background: var(--sidebar-bg);
+    border-top: 1px solid var(--sidebar-spacer);
     border-bottom: 1px solid var(--sidebar-spacer);
     padding: 0.7em 0.8em;
     margin: 0.8em 0 0.5em 0;
@@ -12,8 +12,8 @@
     letter-spacing: 1px;
     font-size: 0.85em;
     border-radius: 3px;
-} */
-.chapter li.part-title {
+}
+/* .chapter li.part-title {
     font-weight: bold;
     font-size: 1.1em;
     color: var(--sidebar-fg);
@@ -21,7 +21,7 @@
     border-top: 1px solid var(--sidebar-spacer);
     padding-top: 0.5em;
     margin-top: 0.5em;
-}
+} */
 
 /* Ensure part titles are not clickable and look distinct */
 .chapter li.part-title {
