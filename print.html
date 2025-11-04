@@ -1,0 +1,1194 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Incentra</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-cc69e1fb.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-56612340.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-d110b0db.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-65b02f08.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-418577b2.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Incentra</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p><img src="../assets/1661011026.png" alt=""><figcaption></figcaption></p>
+<p>Welcome to Incentra - a reliable, secure, and verifiable incentive distribution platform for DeFi protocols powered by <a href="https://coprocessor-docs.brevis.network/">Brevis zkCoprocessor</a>. Incentra is designed to connect protocols with liquidity providers and individual users, and to incentivize liquidity provision, token holding and many other interactions with the protocols. It may help to achieve massive success in increasing the TVL and other forms of user proactivity and engagement with the protocols.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="why-use-incentra"><a class="header" href="#why-use-incentra">Why Use Incentra</a></h1>
+<ul>
+<li>Powered by <a href="https://coprocessor-docs.brevis.network/">Brevis zkCoprocessor</a>, rewards are calculated directly in the ZK circuits and directly verified on-chain, ensuring trustless, transparent and verifiable reward computation. Users can independently verify reward amounts without relying on any centralized authority.</li>
+<li>Backed by Incentra’s reliable SLA that guarantees 99.9% uptime, ensuring minimal disruptions and maximum reliability.</li>
+</ul>
+<h3 id="for-incentive-providers"><a class="header" href="#for-incentive-providers">For Incentive Providers</a></h3>
+<ul>
+<li>Sustainable Growth—Incentivize users’ continuous interactions with the protocol and boost user engagement.</li>
+<li>Built for Compliance—Eliminate the risks of centralized fund distribution with a fully on-chain, autonomous reward claim system, ensuring security and compliance at every step.</li>
+<li>Effortless Campaign Management–Quickly and easily launch your incentive campaigns in just a few clicks with no engineering required.</li>
+<li>Transparent and Trustless Incentives—Leverage ZKPs to ensure a fully transparent and trustless reward calculation and distribution process, eliminating dependence on any centralized authority or manual intervention.</li>
+<li>Cross-chain Capability—Allow incentivizing actions on one blockchain while distributing rewards on another, powered by the cross-chain capability of Brevis zkCoprocessor, which allows ZKPs to be verified on any preferred chain.</li>
+<li>High Flexibility—Flexible and adaptable to a wide range of incentive models, with more customization options available soon.</li>
+<li>Access Controls—Restrict eligibility based on address for compliance reasons and preventing scammers.</li>
+<li>Smart Rewards Forwarding—Automatically detect EOA addresses and smart contracts to ensure rewards are distributed correctly, even when LPs interact through third-party contracts like ALM.</li>
+<li>Seamless Integration—Easily integrate the Incentra SDKs for campaigns and rewards data, or use the Incentra Portal as a ready-to-use interface.</li>
+</ul>
+<h3 id="for-users-and-lps"><a class="header" href="#for-users-and-lps">For Users and LPs</a></h3>
+<ul>
+<li>Transparent Rewards—Reward calculations are based on ZKPs, allowing users to independently verify reward amounts without relying on a centralized authority.</li>
+<li>No Added Risks—Retain liquidity or token holding while earning rewards without needing to lock up assets or added risks.</li>
+<li>Earn Rewards Easily—Through one single user-friendly interface to participate in campaigns, view total rewards for all eligible campaigns, and easily claim rewards in one single transaction.</li>
+<li>Gas-Efficient—Batch claim rewards in a single transaction, saving on gas fees.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="campaign-types"><a class="header" href="#campaign-types">Campaign Types</a></h1>
+<p>Incentra is designed to be flexible and adaptable across a wide range of incentive models, including:</p>
+<ul>
+<li><a href="#token-holding-campaigns">Token holding campaigns</a> — token holders are rewarded based on the time-weighted average (TWA) balance of an ERC-20 token.</li>
+<li><a href="#concentrated-liquidity-campaigns">Concentrated liquidity campaigns</a> — liquidity providers (LPs) are rewarded based on the fees they earn on the Concentrated Liquidity AMM DEXes.</li>
+<li><a href="#lend-and-borrow-campaigns">Lend and borrow campaigns</a> — users are rewarded for lending to or borrowing from a protocol.</li>
+</ul>
+<p>Incentra also plans to expand into additional use cases that may be available in future phases. Feel free to contact us if you would like to create a different type of campaign or customize one to fit your specific needs.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="token-holding-campaigns"><a class="header" href="#token-holding-campaigns">Token Holding Campaigns</a></h1>
+<p>For a token holding campaign on Incentra, users earn rewards based on the time-weighted average (TWA) balance of a specified ERC-20 token. Rewards are distributed proportionally to each user’s share of the total TWA balances among all eligible users.</p>
+<p>By retrieving and calculating token holding data directly from the blockchain, Brevis periodically updates the reward data for all eligible token holders, calculates individual reward allocations, and generates ZK Proofs (ZKPs) to validate the results. These verified results are then utilized by the reward distribution smart contracts to allocate rewards to each individual holder.</p>
+<p>The entire process is fully transparent and trustless, allowing users to independently verify their reward amounts through ZKPs while eliminating the need for manual intervention or reliance on a potentially fallible centralized party.</p>
+<p>Incentra also provides flexibility through additional features:</p>
+<ul>
+<li>Blacklist: Incentive providers can exclude specific addresses from receiving rewards.</li>
+<li>Staking: Users who stake their tokens in external contracts (such as staking LP tokens in gauge contracts) can still receive rewards.</li>
+</ul>
+<p>Note that only a selected list of whitelisted ERC-20 tokens and reward tokens are supported. Please contact us if you’d like to whitelist a token that isn’t currently available.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="concentrated-liquidity-campaigns"><a class="header" href="#concentrated-liquidity-campaigns">Concentrated Liquidity Campaigns</a></h1>
+<p>For a concentrated liquidity farming campaign on Incentra, liquidity providers (LPs) earn rewards proportional to the fees generated by their positions in the pool of a Concentrated Liquidity AMM DEX such as Uniswap v3. </p>
+<p>Brevis retrieves the position data directly from the blockchain and periodically updates the reward data for all LPs. Brevis calculates individual reward distributions and then generates zero-knowledge proofs (ZKPs) to validate the correctness of these calculations. These proofs are then verified on-chain to distribute rewards to LPs accordingly.</p>
+<p>Incentra also supports Active Liquidity Management (ALM) protocols, allowing liquidity to be provided to the incentivized pool via ALM while earning rewards. For supported ALM protocols, Incentra automatically distributes rewards to their depositors based on their proportional share of the ALM vault (represented by the vault LP tokens), ensuring a seamless and efficient reward allocation process without requiring any additional user actions. In the initial scope, the following ALM protocols are supported.</p>
+<ul>
+<li><a href="https://www.gamma.xyz/">Gamma</a></li>
+<li><a href="https://beefy.com/">Beefy</a></li>
+</ul>
+<p>Note that only a selected list of whitelisted rewards tokens and pool tokens are supported on Incentra. Please contact us if you’d like to whitelist a token that isn’t currently available.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lend-and-borrow-campaigns"><a class="header" href="#lend-and-borrow-campaigns">Lend and Borrow Campaigns</a></h1>
+<p>Incentra supports lending and borrowing protocols to reward users for supplying collateral in a vault or borrowing from a vault.</p>
+<h3 id="lendborrow-campaigns-for-euler-finance"><a class="header" href="#lendborrow-campaigns-for-euler-finance">Lend/Borrow Campaigns for Euler Finance</a></h3>
+<ul>
+<li>In lending campaigns, rewards are allocated based on each user’s share of the total time-weighted average (TWA) balances of the corresponding eToken among all eligible users.</li>
+<li>In borrowing campaigns, rewards are allocated proportionally to each user’s share of the average debt within the vault. To accommodate the increasing debt due to interests,  each user’s averaged debt is calculated using samples at random points of time spacing around 10 minutes.</li>
+</ul>
+<p>Brevis fetches eToken and debt data directly from the blockchain, periodically updates balances for all eligible users, calculates individual rewards, and generates zero-knowledge proofs (ZKPs) to ensure the correctness of these calculations. These ZKPs are verified on-chain and the results will be utilized by the rewards distribution contracts to distribute rewards accordingly.</p>
+<p><strong>NOTE</strong>: If the user has multiple sub-accounts, the owner account will receive the rewards for all its sub-accounts.</p>
+<p><strong>NOTE</strong>: The underlying asset token of a vault needs to be whitelisted first before the vault can be used in a campaign. Please contact us if you’d like to whitelist an asset token that isn’t currently available.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="technical-architecture"><a class="header" href="#technical-architecture">Technical Architecture</a></h1>
+<p>The diagram below shows Incentra’s high-level architecture and workflow to support a campaign. </p>
+<p><img src="assets/Screenshot 2025-05-02 at 4.16.53 PM.png" alt=""><figcaption></figcaption></p>
+<p>A campaign is divided into multiple epochs (e.g., 4 hours per epoch). Once a campaign is created, the Incentra server performs the following actions during <em>each epoch</em>:</p>
+<ol>
+<li>Fetches blockchain data relevant to the campaign.</li>
+<li>Sends the data to Brevis provers to generate rewards info and corresponding ZK proofs for all users.</li>
+<li>Submit the rewards info and ZK proofs to the campaign contract to update rewards on-chain.</li>
+</ol>
+<p>Users (i.e., reward earners) can claim their rewards directly from the campaign contract once the rewards info has been updated on-chain.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="fee"><a class="header" href="#fee">Fee</a></h1>
+<p>By default, Brevis charges 3% of total rewards as the service fee for each campaign launched on Incentra. </p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
+<p>On Incentra, campaigns can be created and managed in the <a href="https://incentra-portal.brevis.network/">Brevis Incentra Portal</a>. Here is a checklist before you create a campaign:</p>
+<ul>
+<li>Whitelist your campaign creator address</li>
+<li>Whitelist the tokens relevant to your campaigns</li>
+<li>Check if your data source chain and reward claim chain is supported</li>
+<li>Contact us if there is any reward forwarding requirements</li>
+</ul>
+<h3 id="campaign-creator-whitelist"><a class="header" href="#campaign-creator-whitelist">Campaign Creator Whitelist</a></h3>
+<p>Before getting started, please note that <strong>your wallet address must be whitelisted first</strong> to create a campaign. While anyone can create a campaign through the smart contract, Incentra exclusively recognizes and processes those created by whitelisted addresses.  Please contact us to get whitelisted. </p>
+<p><img src="assets/Screenshot 2025-05-15 at 17.01.27.png" alt=""><figcaption></figcaption></p>
+<h3 id="check-supported-chains"><a class="header" href="#check-supported-chains">Check Supported Chains</a></h3>
+<p>In the Brevis Incentra Portal, you will need to select the “data source chain” and the “reward claim chain”. Data source chain is where your protocol is deployed and reward claim chain is where your reward token is deployed.</p>
+<p>Please contact us if you cannot find the data source chain or the reward claim chain that suits your needs. We are happy to add for your requirements.</p>
+<h3 id="token-whitelist"><a class="header" href="#token-whitelist">Token Whitelist</a></h3>
+<p>All tokens need to be first whitelisted before they can be configured in the Brevis Incentra Portal, including:</p>
+<ul>
+<li>Reward token in campaign types</li>
+<li>Underlying asset token of an Euler vault in a Lend/Borrow campaign (Euler).</li>
+<li>DEX pool token 0/token 1 in a Concentrated Liquidity campaign.</li>
+<li>Token to be held in a Token Holding campaign</li>
+</ul>
+<p>Campaign creators can contact us to whitelist the relevant tokens.</p>
+<h3 id="reward-forwarding-requirements"><a class="header" href="#reward-forwarding-requirements">Reward Forwarding Requirements</a></h3>
+<p>If your campaign requires advanced reward forwarding, please contact us for support. Common reward forwarding requirements include:</p>
+<ul>
+<li>You would like the campaign to also incentivize users who stake their tokens into a staking contract</li>
+<li>You would like to incentivize users who interact with your protocol with some intermediary such as Active Liquidity Management solutions (e.g., Beefy, Gamma).</li>
+</ul>
+<h3 id="next-steps"><a class="header" href="#next-steps">Next Steps</a></h3>
+<p>The following sections offer step-by-step instructions to guide you through creating different types of campaigns:</p>
+<ul>
+<li><a href="#token-holding-campaign">Create a Token Holding Campaign</a></li>
+<li><a href="#concentrated-liquidity-campaign">Create a Concentrated Liquidity Campaign</a></li>
+<li><a href="#lend-and-borrow-campaign-euler">Create a Lend and Borrow Campaign (Euler)</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="token-holding-campaign"><a class="header" href="#token-holding-campaign">Token Holding Campaign</a></h1>
+<p>Click “Create a new campaign” to create a campaign, and select the Campaign Type you would like to create.</p>
+<p><img src="assets/Screenshot 2025-05-15 at 17.00.53.png" alt=""><figcaption></figcaption></p>
+<p><img src="assets/Screenshot 2025-05-19 at 01.03.25.png" alt=""><figcaption></figcaption></p>
+<p>To create a Token Holding campaign, you need to config the following info:</p>
+<ul>
+<li>Campaign Name</li>
+<li>Protocol Name and Logo</li>
+<li>ERC-20 Token Info: please select the ERC-20 token you would like users to hold. Only a selected list of tokens is supported. Please contact us if you’d like to whitelist a token that isn’t currently available</li>
+</ul>
+<p><img src="assets/Screenshot 2025-05-19 at 01.20.39.png" alt=""><figcaption></figcaption></p>
+<ul>
+<li>Campaign Start Time and End Time: select the start time and end time, you could also select to set a 7-day/14-day/30-day/90-day campaign and the campaign end time will be displayed automatically</li>
+<li>Blacklist Address List: it is optional to exclude specific addresses from receiving rewards</li>
+<li>Select Reward Token: select the token you would like to use as a reward token and enter the total rewards amount. Only a selected list of reward tokens is supported. Please contact us if you’d like to whitelist a token that isn’t currently available</li>
+<li>URL: enter the URL of the dApp where users could get the ERC-20 token</li>
+</ul>
+<p>Once all the required information is provided, you can click the ‘Create Campaign’ button to confirm the campaign settings.</p>
+<p><img src="assets/Screenshot 2025-05-19 at 01.22.15.png" alt=""><figcaption></figcaption></p>
+<p>Please review and confirm your campaign settings before launching the campaign as the configs cannot be changed after creation.</p>
+<p><img src="assets/Screenshot 2025-05-19 at 01.23.20.png" alt=""><figcaption></figcaption></p>
+<p>Once the campaign settings are submitted, the campaign will be created. </p>
+<p><img src="assets/Screenshot 2025-05-17 at 19.11.37.png" alt=""><figcaption></figcaption></p>
+<p>You would see a pop-up with a campaign ID and view the campaign creation tx hash in explorer, confirming that your campaign has been successfully created. </p>
+<p><img src="assets/Screenshot 2025-05-19 at 01.23.46.png" alt=""><figcaption></figcaption></p>
+<p>You may also see the campaign creation is failed or campaign is creating, and could retry the campaign creation in the campaign page.</p>
+<p>{% hint style=“warning” %}
+To deposit rewards, you may also directly transfer reward tokens to the campaign contract via a simple ERC-20 transfer from a different address (e.g., a multi-sig) later.
+{% endhint %}</p>
+<p>Once the campaign is created, please deposit the rewards into the reward contract to enable reward distribution. You may deposit rewards while the campaign is to be started, active, or even ended. By default, the total rewards amount should be deposited.</p>
+<p><img src="assets/Screenshot 2025-05-17 at 19.12.24.png" alt=""><figcaption></figcaption></p>
+<p>Once the reward tokens are deposited, congratulations — you’re all set!</p>
+<p><img src="assets/Screenshot 2025-05-17 at 19.12.55.png" alt=""><figcaption></figcaption></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="concentrated-liquidity-campaign"><a class="header" href="#concentrated-liquidity-campaign">Concentrated Liquidity Campaign</a></h1>
+<p>Click “Create a new campaign” to create a campaign, and select the Campaign Type you would like to create.</p>
+<p><img src="assets/Screenshot 2025-05-15 at 17.00.53.png" alt=""><figcaption></figcaption></p>
+<p><img src="assets/Screenshot 2025-05-15 at 17.25.34.png" alt=""><figcaption></figcaption></p>
+<p>To create a Concentrated Liquidity campaign, you need to config the following info:</p>
+<ul>
+<li>Campaign Name</li>
+<li>Dex</li>
+<li>Liquidity Pool: select the chain where the pool is deployed, enter the pool address and the pool name</li>
+</ul>
+<p><img src="assets/Screenshot 2025-05-18 at 18.22.29.png" alt=""><figcaption></figcaption></p>
+<ul>
+<li>Campaign Start Time and End Time: select the start time and end time, you could also select to set a 7-day/14-day/30-day/90-day campaign and the campaign end time will be displayed automatically</li>
+<li>Blacklist Address List: it is optional to exclude specific addresses from receiving rewards</li>
+<li>Select Reward Token: select the token you would like to use as a reward token and enter the total rewards amount. Only a selected list of reward tokens is supported. Please contact us if you’d like to whitelist a token that isn’t currently available</li>
+<li>URL: enter the URL of the dApp where LPs could deposit liquidity</li>
+</ul>
+<p>Once all the required information is provided, you can click the ‘Create Campaign’ button to confirm the campaign settings.</p>
+<p><img src="assets/Screenshot 2025-05-18 at 18.22.36.png" alt=""><figcaption></figcaption></p>
+<p>Please review and confirm your campaign settings before launching the campaign as the configs cannot be changed after creation.</p>
+<p><img src="assets/Screenshot 2025-05-18 at 18.29.05.png" alt=""><figcaption></figcaption></p>
+<p>Once the campaign settings are submitted, the campaign will be created. </p>
+<p><img src="assets/Screenshot 2025-05-17 at 19.11.37.png" alt=""><figcaption></figcaption></p>
+<p>You would see a pop-up with a campaign ID and view the campaign creation tx hash in explorer, confirming that your campaign has been successfully created. </p>
+<p><img src="assets/Screenshot 2025-05-18 at 18.29.26.png" alt=""><figcaption></figcaption></p>
+<p>You may also see the campaign creation is failed or campaign is creating, and could retry the campaign creation in the campaign page.</p>
+<p>{% hint style=“warning” %}
+To deposit rewards, you may also directly transfer reward tokens to the campaign contract via a simple ERC-20 transfer from a different address (e.g., a multi-sig) later.
+{% endhint %}</p>
+<p>Once the campaign is created, please deposit the rewards into the reward contract to enable reward distribution. You may deposit rewards while the campaign is to be started, active, or even ended. By default, the total rewards amount should be deposited.</p>
+<p><img src="assets/Screenshot 2025-05-17 at 19.12.24.png" alt=""><figcaption></figcaption></p>
+<p>Once the reward tokens are deposited, congratulations — you’re all set!</p>
+<p><img src="assets/Screenshot 2025-05-17 at 19.12.55.png" alt=""><figcaption></figcaption></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lend-and-borrow-campaign-euler"><a class="header" href="#lend-and-borrow-campaign-euler">Lend and Borrow Campaign (Euler)</a></h1>
+<p>Click “Create a new campaign” to create a campaign, and select the Campaign Type you would like to create.</p>
+<p><img src="assets/Screenshot 2025-05-15 at 17.00.53.png" alt=""><figcaption></figcaption></p>
+<p><img src="assets/Screenshot 2025-05-18 at 17.35.29.png" alt=""><figcaption></figcaption></p>
+<p>Select Euler as the lending protocol to be incentivized.</p>
+<p><img src="assets/Screenshot 2025-05-18 at 17.34.40.png" alt=""><figcaption></figcaption></p>
+<p>To create a Euler campaign, you need to configure the following info:</p>
+<ul>
+<li>Campaign Name</li>
+<li>Action: the action you would like to incentivize - supply to a vault or borrow from a vault</li>
+<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically</li>
+</ul>
+<p><img src="assets/Screenshot 2025-05-18 at 18.09.35.png" alt=""><figcaption></figcaption></p>
+<ul>
+<li>Campaign Start Time and End Time: select the start time and end time, you could also select to set a 7-day/14-day/30-day/90-day campaign and the campaign end time will be displayed automatically</li>
+<li>Blacklist Address List: it is optional to exclude specific addresses from receiving rewards</li>
+<li>Select Reward Token: select the token you would like to use as a reward token and enter the total rewards amount. Only a selected list of reward tokens is supported. Please contact us if you’d like to whitelist a token that isn’t currently available</li>
+<li>URL: enter the URL of the dApp where users could supply or borrow</li>
+</ul>
+<p>Once all the required information is provided, you can click the ‘Create Campaign’ button to confirm the campaign settings.</p>
+<p><img src="assets/Screenshot 2025-05-18 at 18.09.20.png" alt=""><figcaption></figcaption></p>
+<p>Please review and confirm your campaign settings before launching the campaign as the configs cannot be changed after creation.</p>
+<p><img src="assets/Screenshot 2025-05-17 at 19.10.44.png" alt=""><figcaption></figcaption></p>
+<p>Once the campaign settings are submitted, the campaign will be created. </p>
+<p><img src="assets/Screenshot 2025-05-17 at 19.11.37 (1).png" alt=""><figcaption></figcaption></p>
+<p>You would see a pop-up with a campaign ID and view the campaign creation tx hash in explorer, confirming that your campaign has been successfully created. </p>
+<p><img src="assets/Screenshot 2025-05-17 at 19.11.50.png" alt=""><figcaption></figcaption></p>
+<p>You may also see the campaign creation is failed or campaign is creating, and could retry the campaign creation in the campaign page.</p>
+<p><img src="assets/Screenshot 2025-05-18 at 18.03.23.png" alt=""><figcaption></figcaption></p>
+<p>{% hint style=“warning” %}
+To deposit rewards, you may also directly transfer reward tokens to the campaign contract via a simple ERC-20 transfer from a different address (e.g., a multi-sig) later.
+{% endhint %}</p>
+<p>Once the campaign is created, please deposit the rewards into the reward contract to enable reward distribution. You may deposit rewards while the campaign is to be started, active, or even ended. By default, the total rewards amount should be deposited.</p>
+<p><img src="assets/Screenshot 2025-05-17 at 19.12.24.png" alt=""><figcaption></figcaption></p>
+<p>Once the reward tokens are deposited, congratulations — you’re all set!</p>
+<p><img src="assets/Screenshot 2025-05-17 at 19.12.55.png" alt=""><figcaption></figcaption></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="campaign-rules"><a class="header" href="#campaign-rules">Campaign Rules</a></h1>
+<h2 id="common-rules"><a class="header" href="#common-rules">Common Rules</a></h2>
+<p>Below is the description of rules that apply to all campaign types.</p>
+<h3 id="epoch"><a class="header" href="#epoch">Epoch</a></h3>
+<p>All users’ rewards are attested and updated periodically. The current period is 4 hours. Users might see their rewards updated slightly longer (e.g., 30 minutes) than 4 hours due to the time to generate ZK proofs for users’ rewards.</p>
+<p>Also, for the 1st epoch after the campaign starts, it may take significantly more time (4 to 12 hours) to update the rewards due to the time to index and fetch relevant historical on-chain data (events, storage, transactions).</p>
+<p>In some rare cases (e.g., there is a spike in campaign participants), the rewards update delay may be significantly longer than 4 hours as we expand system capacity and resolve the issues. Rest assured that the rewards in the delayed epochs will still be proved.</p>
+<h3 id="dust-rewards"><a class="header" href="#dust-rewards">Dust Rewards</a></h3>
+<p>For each epoch, if a user’s reward amount &lt; 1 wei (e.g., less than 10^-18 if the reward token decimal is 18), the user’s rewards won’t be attested for the epoch.</p>
+<h2 id="reward-rules-for-each-campaign-types"><a class="header" href="#reward-rules-for-each-campaign-types">Reward Rules for Each Campaign Types</a></h2>
+<h3 id="concentrated-liquidity-campaign-1"><a class="header" href="#concentrated-liquidity-campaign-1">Concentrated Liquidity Campaign</a></h3>
+<p>In a concentrated liquidity campaign, each liquidity provider (LP) is allocated rewards proportional to the fees earned:</p>
+<p><em>LP campaign reward in an epoch = fees earned by LP in the epoch / total fees earned by all LPs in the epoch * total campaign rewards in the epoch * (100% - campaign fee)</em> </p>
+<p>Here, <em>campaign fee</em> is the percentage of fees charged by the Incentra platform.</p>
+<p>NOTE: If there is no swap during an epoch, this epoch will be skipped and no LPs will get rewards for this empty epoch.</p>
+<h3 id="token-holding-campaign-1"><a class="header" href="#token-holding-campaign-1">Token Holding Campaign</a></h3>
+<p>In a token holding campaign, each token holder is allocated rewards proportional to the Time-Weighted Averaged (TWA) token balance in the epoch:</p>
+<p><em>user campaign reward in an epoch = TWA of the user in the epoch / sum of TWAs of all users in the epoch * total campaign rewards in the epoch * (100% - campaign fee)</em></p>
+<p>Here, <em>campaign fee</em> is the percentage of fees charged by the Incentra platform.</p>
+<p>NOTE: A user needs to directly hold the token in the wallet to receive the campaign rewards unless explicitly specified (e.g., if specified, staking the token into a staking contract may also earn rewards even if the token is not directly held in the wallet).</p>
+<h3 id="lendborrow-campaign-euler"><a class="header" href="#lendborrow-campaign-euler">Lend/Borrow Campaign (Euler)</a></h3>
+<p>In an Euler supply campaign, each supplier is allocated rewards proportional to the Time-Weighted Averaged (TWA) eToken balance for the vault in the epoch:</p>
+<p><em>user campaign reward in an epoch = eToken TWA of the user in the epoch / sum of eToken TWAs of all users in the epoch * total campaign rewards in the epoch * (1 - campaign fee)</em></p>
+<p>Here, <em>campaign fee</em> is the percentage of fees charged by the Incentra platform.</p>
+<p>In an Euler borrow campaign, each borrower is allocated rewards proportional to the average debt (dToken balance) for t he vault in the epoch:</p>
+<p><em>user campaign reward in an epoch = user’s average debt in the epoch / sum of average debts of all users in the epoch * total campaign rewards in the epoch * (100% - campaign fee)</em></p>
+<p>The average debt is calculated using samples at random points of time every 10 minutes in order to accommodate the increasing debt due to interests.</p>
+<p><strong>NOTE</strong>: If the user has multiple sub-accounts, the owner account will receive the rewards for all its sub-accounts.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="user-tutorials"><a class="header" href="#user-tutorials">User Tutorials</a></h1>
+<p>Welcome to Brevis Incentra — <a href="https://incentra.brevis.network/">https://incentra.brevis.network/</a> — for participating in incentive campaigns and claim your rewards. To earn and claim rewards on Incentra, you will need to connect your wallet first. </p>
+<p><img src="assets/Screenshot 2025-05-19 at 01.33.53.png" alt=""><figcaption></figcaption></p>
+<h3 id="discover-campaigns"><a class="header" href="#discover-campaigns">Discover Campaigns</a></h3>
+<p>By default, you will see the “Earn” page, which lists all available campaigns on Incentra. By clicking on each row, you can view details of the active campaigns and access the URL to participate and start earning right away!</p>
+<p><img src="assets/Screenshot 2025-05-19 at 01.36.11.png" alt=""><figcaption></figcaption></p>
+<p><img src="assets/Screenshot 2025-05-19 at 01.37.08.png" alt=""><figcaption></figcaption></p>
+<h3 id="dashboard"><a class="header" href="#dashboard">Dashboard</a></h3>
+<p>On the Dashboard page, you can view your claimable rewards and see all campaigns you’ve participated in—whether still active or ended with unclaimed rewards. Please note that rewards can be claimed anytime within <strong>180 days</strong> after a campaign ends.</p>
+<p>You can either click the ‘Claim All’ button to collect all rewards on the same chain in one single transaction, or click the ‘Claim’ button next to each campaign to claim them individually.</p>
+<p><img src="assets/Screenshot 2025-05-19 at 01.42.08 (1).png" alt=""><figcaption></figcaption></p>
+<p><img src="assets/Screenshot 2025-05-19 at 01.51.07 (1).png" alt=""><figcaption></figcaption></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="guidelines"><a class="header" href="#guidelines">Guidelines</a></h1>
+<p>Incentra provides off-chain and on-chain APIs to fetch campaign data and let users claim their rewards. Incentive distributors can leverage these APIs to integrate Incentra with their own frontend UI to provide a seamless reward experience for users.</p>
+<p>Specifically, the following APIs are available: </p>
+<ul>
+<li><a href="developer-sdk/get-campaigns">Get Campaign</a>: APIs for retrieve campaigns details by different criteria (e.g., by chain, by protocol, by campaign ID, by user).</li>
+<li><a href="#read-and-claim-rewards">Read and Claim Rewards</a>: on-chain interfaces for fetching and claiming a user’s claimable rewards. </li>
+<li><a href="#get-user-leaderboard">Get User Leaderboard</a>: APIs for retrieving all users and their cumulative rewards by campaign ID.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="get-campaigns"><a class="header" href="#get-campaigns">Get Campaigns</a></h1>
+<p>Incentra provides restful APIs to access the campaign data.</p>
+<h3 id="core-functionality"><a class="header" href="#core-functionality">Core Functionality</a></h3>
+<p>The SDK provides details about different types of incentive campaigns launched on Incentra:</p>
+<ol>
+<li><a href="#concentrated-liquidity-campaign-2"><strong>Concentrated Liquidity Campaigns</strong></a> - Incentivize providing concentrated liquidity in DEXes.</li>
+<li><a href="#token-holding-campaign-2"><strong>Token Holding Campaigns</strong></a> - Incentivize holding specific tokens.</li>
+<li><a href="#lend-and-borrow-campaign-euler-1"><strong>Lend and Borrow Campaigns (Euler)</strong> </a>- Incentivize lending or borrowing from Euler finance.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="concentrated-liquidity-campaign-2"><a class="header" href="#concentrated-liquidity-campaign-2">Concentrated Liquidity Campaign</a></h1>
+<p>This page provides a detailed reference for the <code>GetLiquidityCampaigns</code> API, which allows you to retrieve information about concentrated liquidity campaigns for DEXes.</p>
+<h3 id="endpoint"><a class="header" href="#endpoint">Endpoint</a></h3>
+<pre><code>POST https://incentra-prd.brevis.network/sdk/v1/liquidityCampaigns
+</code></pre>
+<h3 id="request"><a class="header" href="#request">Request</a></h3>
+<table data-header-hidden="">
+<thead>
+<tr><th width="165.07421875">Field</th><th width="192.00390625">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>chain_id</code></td><td><code>[uint64]</code></td><td>Filter by the chain ID(s) where the targeted DEX pool is deployed.</td></tr>
+<tr><td><code>campaign_type</code></td><td><code>[CampaignType]</code></td><td>Filter by the DEX protocols. Enum will be specified later.</td></tr>
+<tr><td><code>pool_id</code></td><td><code>[string]</code></td><td>Filter by pool identifier (e.g., pool address or ID). </td></tr>
+<tr><td><code>campaign_id</code></td><td><code>[string]</code></td><td>Filter by specific campaign ID(s).</td></tr>
+<tr><td><code>status</code></td><td><code>[CampaignStatus]</code></td><td>Filter by campaign status(es).  Enum will be specified later.</td></tr>
+<tr><td><code>user_address</code></td><td><code>[string]</code></td><td>Retrieve campaigns where the specified user address(es) has participated.</td></tr>
+</tbody>
+</table>
+
+<p>If any filter is not specified, it means there is no constraint for this filter.</p>
+<p><code>CampaignType</code> <strong>Enum</strong></p>
+<p>The <code>CampaignType</code> enum has the following values:</p>
+<ul>
+<li><code>UNISWAP_V3</code></li>
+<li><code>UNISWAP_V4</code></li>
+<li><code>PANCAKESWAP_V3</code></li>
+<li><code>PANCAKESWAP_V4</code></li>
+<li><code>QUICKSWAP_V3</code></li>
+</ul>
+<p><br><code>CampaignStatus</code> <strong>Enum</strong></p>
+<p>The <code>CampaignStatus</code> enum has the following values:</p>
+<ul>
+<li><code>DEPLOYING</code></li>
+<li><code>CREATING_FAILED</code></li>
+<li><code>INACTIVE</code></li>
+<li><code>ACTIVE</code></li>
+<li><code>ENDED</code></li>
+<li><code>DEACTIVATED</code></li>
+</ul>
+<h3 id="response"><a class="header" href="#response">Response</a></h3>
+<table>
+<thead>
+<tr><th width="159.98046875">Field</th><th width="260.390625">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>err</code></td><td><code>ErrMsg</code></td><td>Error details if the request failed.</td></tr>
+<tr><td><code>campaigns</code></td><td><code>[LiquidityCampaignInfo]</code></td><td>List of matching liquidity campaigns.</td></tr>
+</tbody>
+</table>
+
+<p><strong><code>LiquidityCampaignInfo</code> Fields</strong></p>
+<p>Each campaign includes the following fields:</p>
+<table data-header-hidden="">
+<thead>
+<tr><th width="277.73828125">Fileld</th><th width="168.19140625">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>chain_id</code></td><td><code>uint64</code></td><td>Chain ID where the liquidity pool is deployed.</td></tr>
+<tr><td><code>campaign_type</code></td><td><code>CampaignType</code></td><td>The DEX protocol/version for the campaign. </td></tr>
+<tr><td><code>pools</code></td><td><code>PoolInfo</code></td><td>Information about the specific liquidity pool targeted by the campaign.</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>string</code></td><td>Unique identifier for the campaign.</td></tr>
+<tr><td><code>campaign_name</code></td><td><code>string</code></td><td>Campaign display name.</td></tr>
+<tr><td><code>start_time</code></td><td><code>uint64</code></td><td>Campaign start timestamp.</td></tr>
+<tr><td><code>end_time</code></td><td><code>uint64</code></td><td>Campaign end timestamp.</td></tr>
+<tr><td><code>reward_info</code></td><td><code>RewardInfo</code></td><td>Details about the reward token and amount. See <code>RewardInfo</code> below.</td></tr>
+<tr><td><code>last_reward_attestation_time</code></td><td><code>uint64</code></td><td>Last campaign reward attestation timestamp.</td></tr>
+<tr><td><code>status</code></td><td><code>CampaignStatus</code></td><td>Current status of the campaign. See <code>CampaignStatus</code> enum.</td></tr>
+</tbody>
+</table>
+
+<p><strong><code>PoolInfo</code> Fields</strong></p>
+<table data-header-hidden="">
+<thead>
+<tr><th width="193.953125">Field</th><th width="159.921875">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>pool_id</code></td><td><code>string</code></td><td>Pool identifier (e.g., pool address or pool ID).</td></tr>
+<tr><td><code>pool_name</code></td><td><code>string</code></td><td>Pool display name.</td></tr>
+</tbody>
+</table>
+
+<p><strong><code>RewardInfo</code> Fields</strong></p>
+<table data-header-hidden="">
+<thead>
+<tr><th width="227.5546875">Field</th><th width="140.09375">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>submission_chain_id</code></td><td><code>uint64</code></td><td>Campaign reward submission chain ID (see <a href="#read-and-claim-rewards">on-chain reward claim</a> for details).</td></tr>
+<tr><td><code>submission_contract</code></td><td><code>string</code></td><td>Campaign reward submission contract address (see <a href="#read-and-claim-rewards">on-chain reward claim</a> for details)</td></tr>
+<tr><td><code>claim_chain_id</code></td><td><code>uint64</code></td><td>Chain ID where rewards can be claimed.</td></tr>
+<tr><td><code>claim_contract</code></td><td><code>string</code></td><td>Smart contract address for claiming rewards.</td></tr>
+<tr><td><code>token_address</code></td><td><code>string</code></td><td>Reward token address.</td></tr>
+<tr><td><code>token_symbol</code></td><td><code>string</code></td><td>Reward token symbol.</td></tr>
+<tr><td><code>reward_amt</code></td><td><code>string</code></td><td>Total reward amount for the campaign.</td></tr>
+<tr><td><code>reward_usd_price</code></td><td><code>string</code></td><td>USD price per reward token.</td></tr>
+<tr><td><code>reward_per_hour</code></td><td><code>string</code></td><td>Reward amount distributed per hour.</td></tr>
+<tr><td><code>apr</code></td><td><code>float</code></td><td>The APR of the campaign (for example, 0.03 means 3% APR)</td></tr>
+<tr><td><code>tvl</code></td><td><code>float</code></td><td>The TVL of the liquidity pool (in USD value)</td></tr>
+</tbody>
+</table>
+
+<h3 id="example-request-curl"><a class="header" href="#example-request-curl">Example Request (curl)</a></h3>
+<p>{% code title=“data.json” %}</p>
+<pre><code class="language-json">{
+    "chain_id": [
+        1,
+        42161
+    ],
+    "campaign_type": [
+        1,
+        2,
+        3,
+        4,
+        5
+    ],
+    "pool_id": [
+        "0xD0A4c8A1a14530C7C9EfDaD0BA37E8cF4204d230"
+    ],
+    "campaign_id": [],
+    "status": [
+        4,
+        5
+    ],
+    "user_address": [] // no constraint for this filter 
+}
+</code></pre>
+<p>{% endcode %}</p>
+<p>Post with <code>data.json</code></p>
+<pre><code class="language-sh">curl -X POST -H "Content-Type: application/json" -d @data.json https://incentra-prd.brevis.network/sdk/v1/liquidityCampaigns
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="token-holding-campaign-2"><a class="header" href="#token-holding-campaign-2">Token Holding Campaign</a></h1>
+<p>This page provides a detailed reference for the <code>GetTokenHoldingCampaigns</code> API, which allows you to retrieve information about token holding campaigns by different filters.</p>
+<h3 id="endpoint-1"><a class="header" href="#endpoint-1">Endpoint</a></h3>
+<pre><code>POST https://incentra-prd.brevis.network/sdk/v1/tokenholdingCampaigns
+</code></pre>
+<h3 id="request-1"><a class="header" href="#request-1">Request</a></h3>
+<table>
+<thead>
+<tr><th width="181.296875">Field</th><th width="187.953125">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>chain_id</code></td><td><code>[uint64]</code></td><td>Chain ID(s) where the target token is deployed.</td></tr>
+<tr><td><code>token_address</code></td><td><code>[string]</code></td><td>Filter by the address(es) of the token being held for the campaign.</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>[string]</code></td><td>Filter by specific campaign ID(s).</td></tr>
+<tr><td><code>status</code></td><td><code>[CampaignStatus]</code></td><td>Filter by campaign status(es).  Enum will be specified later.</td></tr>
+<tr><td><code>user_address</code></td><td><code>[string]</code></td><td>Retrieve campaigns where the specified user address(es) has participated.</td></tr>
+</tbody>
+</table>
+
+<p>If any filter is not specified, it means there is no constraint for this filter.</p>
+<p><code>CampaignStatus</code> <strong>Enum</strong></p>
+<p>The <code>CampaignStatus</code> enum has the following values:</p>
+<ul>
+<li><code>DEPLOYING</code></li>
+<li><code>CREATING_FAILED</code></li>
+<li><code>INACTIVE</code></li>
+<li><code>ACTIVE</code></li>
+<li><code>ENDED</code></li>
+<li><code>DEACTIVATED</code></li>
+</ul>
+<h3 id="response-1"><a class="header" href="#response-1">Response</a></h3>
+<table>
+<thead>
+<tr><th width="148.0625">Field</th><th width="332.00390625">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>err</code></td><td><code>ErrMsg</code></td><td>Error message.</td></tr>
+<tr><td><code>campaigns</code></td><td><code>[TokenHoldingCampaignInfo]</code></td><td>List of matching token holding campaigns.</td></tr>
+</tbody>
+</table>
+
+<p><code>TokenHoldingCampaignInfo</code> <strong>Fields</strong></p>
+<table>
+<thead>
+<tr><th width="281.3828125">Field</th><th width="162.56640625">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>chain_id</code></td><td><code>uint64</code></td><td>Chain ID where the target token is deployed.</td></tr>
+<tr><td><code>token_address</code></td><td><code>string</code></td><td>Address of the token being held.</td></tr>
+<tr><td><code>token_symbol</code></td><td><code>string</code></td><td>Symbol of the token being held (e.g., "WETH", "USDC").</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>string</code></td><td>Campaign ID.</td></tr>
+<tr><td><code>campaign_name</code></td><td><code>string</code></td><td>Campaign display name.</td></tr>
+<tr><td><code>start_time</code></td><td><code>uint64</code></td><td>Campaign start timestamp.</td></tr>
+<tr><td><code>end_time</code></td><td><code>uint64</code></td><td>Campaign end timestamp.</td></tr>
+<tr><td><code>reward_info</code></td><td><code>RewardInfo</code></td><td>Details about the reward token and amount. See <code>RewardInfo</code> below.</td></tr>
+<tr><td><code>last_reward_attestation_time</code></td><td><code>uint64</code></td><td>Timestamp of the last reward calculation/snapshot.</td></tr>
+<tr><td><code>status</code></td><td><code>CampaignStatus</code></td><td>Current status of the campaign. See <code>CampaignStatus</code> enum.</td></tr>
+</tbody>
+</table>
+
+<p><code>RewardInfo</code> <strong>Fields</strong></p>
+<table>
+<thead>
+<tr><th width="203.0625">Field</th><th width="98.703125">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>submission_chain_id</code></td><td><code>uint64</code></td><td>Campaign reward submission chain ID (see <a href="#read-and-claim-rewards">on-chain reward claim</a> for details)</td></tr>
+<tr><td><code>submission_contract</code></td><td><code>string</code></td><td>Campaign reward submission contract address (see <a href="#read-and-claim-rewards">on-chain reward claim</a> for details)</td></tr>
+<tr><td><code>claim_chain_id</code></td><td><code>uint64</code></td><td>Chain ID where rewards can be claimed.</td></tr>
+<tr><td><code>claim_contract</code></td><td><code>string</code></td><td>Address of the smart contract used for claiming rewards.</td></tr>
+<tr><td><code>token_address</code></td><td><code>string</code></td><td>Address of the reward token.</td></tr>
+<tr><td><code>token_symbol</code></td><td><code>string</code></td><td>Symbol of the reward token (e.g., "WETH").</td></tr>
+<tr><td><code>reward_amt</code></td><td><code>string</code></td><td>Total reward amount for this campaign.</td></tr>
+<tr><td><code>reward_usd_price</code></td><td><code>string</code></td><td>USD price for the reward token.</td></tr>
+<tr><td><code>reward_per_hour</code></td><td><code>string</code></td><td>Reward amount distributed per hour.</td></tr>
+<tr><td><code>apr</code></td><td><code>float</code></td><td>The APR of the campaign (for example, 0.03 means 3% APR)</td></tr>
+<tr><td><code>tvl</code></td><td><code>float</code></td><td>The total supply USD value of the token to be held</td></tr>
+</tbody>
+</table>
+
+<h3 id="example-request-curl-1"><a class="header" href="#example-request-curl-1">Example Request (curl)</a></h3>
+<p>{% code title=“data.json” %}</p>
+<pre><code class="language-json">{
+    "chain_id": [
+        1,
+        42161
+    ],
+    "token_address": [
+        "0x8D983cb9388EaC77af0474fA441C4815500Cb7BB"
+    ],
+    "campaign_id": [
+
+    ],
+    "status": [
+        4,
+        5
+    ],
+    "user_address": [
+
+    ]
+}
+</code></pre>
+<p>{% endcode %}</p>
+<p>post with <code>data.json</code></p>
+<pre><code class="language-sh">curl -X POST -H "Content-Type: application/json" -d @data.json https://incentra-prd.brevis.network/sdk/v1/tokenholdingCampaignsityCampaigns
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lend-and-borrow-campaign-euler-1"><a class="header" href="#lend-and-borrow-campaign-euler-1">Lend and Borrow Campaign (Euler)</a></h1>
+<p>This page specifies the API for retrieving details about Lend/Borrow campaigns for the Euler protocol.</p>
+<h3 id="endpoint-2"><a class="header" href="#endpoint-2">Endpoint</a></h3>
+<pre><code>POST https://incentra-prd.brevis.network/sdk/v1/eulerCampaigns
+</code></pre>
+<h3 id="request-2"><a class="header" href="#request-2">Request</a></h3>
+<table>
+<thead>
+<tr><th width="171.02734375">Field</th><th width="199.8515625">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>chain_id</code></td><td><code>[uint64]</code></td><td>Chain ID(s) where the targeted Euler vault is deployed.</td></tr>
+<tr><td><code>vault_address</code></td><td><code>[string]</code></td><td>List of targeted Euler vault contract addresses.</td></tr>
+<tr><td><code>action</code></td><td><code>[uint64]</code></td><td>Filter by campaign action type: <code>borrow: 2001</code>, <code>lend: 2002</code>.</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>[string]</code></td><td>List of specific campaign IDs to retrieve.</td></tr>
+<tr><td><code>status</code></td><td><code>[CampaignStatus]</code></td><td>Filter by campaign status (enum will be specified later)</td></tr>
+<tr><td><code>user_address</code></td><td><code>[string]</code></td><td>Retrieve campaigns where the specified user address(es) has participated.</td></tr>
+</tbody>
+</table>
+
+<p>If any filter is not specified, it means there is no constraint for this filter.</p>
+<p><strong><code>CampaignStatus</code> Enum</strong></p>
+<p>The <code>CampaignStatus</code> enum has the following values:</p>
+<ul>
+<li><code>DEPLOYING</code></li>
+<li><code>CREATING_FAILED</code></li>
+<li><code>INACTIVE</code></li>
+<li><code>ACTIVE</code></li>
+<li><code>ENDED</code></li>
+<li><code>DEACTIVATED</code></li>
+</ul>
+<h3 id="response-2"><a class="header" href="#response-2">Response</a></h3>
+<table>
+<thead>
+<tr><th width="225.3125">Field</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>err</code></td><td><code>ErrMsg</code></td><td>Error message if request fails.</td></tr>
+<tr><td><code>campaigns</code></td><td><code>[EulerCampaignInfo]</code></td><td>List of Euler campaign details.</td></tr>
+</tbody>
+</table>
+
+<p><code>EulerCampaignInfo</code> <strong>Fields</strong></p>
+<table>
+<thead>
+<tr><th width="281.55859375">Field</th><th width="163.11328125">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>chain_id</code></td><td><code>uint64</code></td><td>Chain ID where the targeted Euler vault is deployed.</td></tr>
+<tr><td><code>vault_address</code></td><td><code>string</code></td><td>Euler vault address.</td></tr>
+<tr><td><code>action</code></td><td><code>uint64</code></td><td>Campaign action type: <code>borrow: 2001</code>, <code>lend: 2002</code>.</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>string</code></td><td>Unique identifier for the campaign.</td></tr>
+<tr><td><code>campaign_name</code></td><td><code>string</code></td><td>Campaign display name</td></tr>
+<tr><td><code>start_time</code></td><td><code>uint64</code></td><td>Campaign start timestamp.</td></tr>
+<tr><td><code>end_time</code></td><td><code>uint64</code></td><td>Campaign end timestamp.</td></tr>
+<tr><td><code>reward_info</code></td><td><code>RewardInfo</code></td><td>Details about the reward token and amount. See <code>RewardInfo</code> below.</td></tr>
+<tr><td><code>last_reward_attestation_time</code></td><td><code>uint64</code></td><td>Last campaign reward attestation timestamp.</td></tr>
+<tr><td><code>status</code></td><td><code>CampaignStatus</code></td><td>Current status of the campaign. See <code>CampaignStatus</code> enum.</td></tr>
+</tbody>
+</table>
+
+<p><code>RewardInfo</code> <strong>Fields</strong></p>
+<table>
+<thead>
+<tr><th width="218.54296875">Field</th><th width="118.79296875">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>submission_chain_id</code></td><td><code>uint64</code></td><td>Campaign reward submission chain ID (see <a href="#read-and-claim-rewards">on-chain reward claim</a> for details).</td></tr>
+<tr><td><code>submission_contract</code></td><td><code>string</code></td><td>Campaign reward submission contract address (see <a href="#read-and-claim-rewards">on-chain reward claim</a> for details)</td></tr>
+<tr><td><code>claim_chain_id</code></td><td><code>uint64</code></td><td>Chain ID where rewards can be claimed.</td></tr>
+<tr><td><code>claim_contract</code></td><td><code>string</code></td><td>Reward claim contract address.</td></tr>
+<tr><td><code>token_address</code></td><td><code>string</code></td><td>Reward token address.</td></tr>
+<tr><td><code>token_symbol</code></td><td><code>string</code></td><td>Reward token symbol.</td></tr>
+<tr><td><code>reward_amt</code></td><td><code>string</code></td><td>Reward amount.</td></tr>
+<tr><td><code>reward_usd_price</code></td><td><code>string</code></td><td>USD price for the reward token.</td></tr>
+<tr><td><code>reward_per_hour</code></td><td><code>string</code></td><td>Reward amount distributed per hour.</td></tr>
+<tr><td><code>apr</code></td><td><code>float</code></td><td>The APR of the campaign (for example, 0.03 means 3% APR)</td></tr>
+<tr><td><code>tvl</code></td><td><code>float</code></td><td>The supply/borrow USD value of the vault</td></tr>
+</tbody>
+</table>
+
+<h3 id="post-example-curl"><a class="header" href="#post-example-curl">Post Example (curl)</a></h3>
+<p>{% code title=“data.json” %}</p>
+<pre><code class="language-json">{
+    "chain_id": [
+        1,
+        42161
+    ],
+    "vault_address": [
+        "0xF037eeEBA7729c39114B9711c75FbccCa4A343C8"
+    ],
+    "campaign_id": [
+
+    ],
+    "status": [
+        4
+    ],
+    "user_address": [],
+    "action": [
+        2001,
+        2002
+    ]
+}
+</code></pre>
+<p>{% endcode %}</p>
+<p>post with <code>data.json</code>:</p>
+<pre><code class="language-sh">curl -X POST -H "Content-Type: application/json" -d @data.json POST https://incentra-prd.brevis.network/sdk/v1/eulerCampaigns
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="read-and-claim-rewards"><a class="header" href="#read-and-claim-rewards">Read and Claim Rewards</a></h1>
+<h2 id="same-chain-reward-claim"><a class="header" href="#same-chain-reward-claim">Same-chain reward claim</a></h2>
+<p>If the ZK-attested rewards information is submitted to the same chain that hosts the campaign for users to claim rewards, the reward claim process is straightforward: call the following functions.</p>
+<pre><code class="language-solidity">// claim reward, send reward token to the earner
+function claim(address earner) external;
+
+// claim reward, send reward token to address specified by the earner (msg.sender)
+function claimWithRecipient(address to) external;
+</code></pre>
+<p>One can obtain a user’s <em>cumulative rewards and unclaimed rewards</em> through the following view functions.</p>
+<pre><code class="language-solidity">struct AddrAmt {
+    address token;
+    uint256 amount;
+}
+
+// get cumulative rewards
+function viewTotalRewards(address user) external view returns (AddrAmt[] memory) ;
+// get unclaimed rewards
+function viewUnclaimedRewards(address earner) external view returns (AddrAmt[] memory);
+</code></pre>
+<h2 id="cross-chain-reward-claim"><a class="header" href="#cross-chain-reward-claim">Cross-chain reward claim</a></h2>
+<p>To reduce the gas cost of the campaign on an expensive chain (e.g., Ethereum), we can configure the system to submit ZK-attested rewards on a more affordable chain (e.g., Optimism, Arbitrum), then bridge the Merkle root of all rewards back to the campaign chain.</p>
+<p>In this case, there are 2 contracts:</p>
+<ol>
+<li><strong>Rewards Submission contract</strong> where the ZK-proved rewards are submitted. The Rewards Submission contract builds and stores the entire reward Merkle tree.</li>
+<li><strong>Rewards Claim contract</strong> that synchronizes the Merkle root from the Rewards Submission contract. Users interact with this contract to claim their rewards by providing a Merkle proof. This contract also escrows the rewards and stores each user’s already-claimed reward amount.</li>
+</ol>
+<p><strong>To claim rewards, the user needs to</strong> </p>
+<ol>
+<li>Obtain the reward information along with the Merkle proof by calling the <a href="#get-reward-merkle-proof-api">Get Reward Merkle Proof API</a>.</li>
+<li>Submit the reward information along with the Merkle proof to the <strong>Reward Claim contract.</strong> </li>
+</ol>
+<p><strong>NOTE:</strong> There is also a “<strong>ClaimAll</strong>” contract which can help claim a user’s rewards from multiple campaigns in a single transaction. See <a href="#claim-all-rewards-in-a-single-transaction">here</a> for details.</p>
+<pre><code class="language-solidity">// claim reward, send reward token to the earner
+function claim(
+    address earner, 
+    uint256[] calldata cumulativeAmounts, 
+    uint64 epoch, 
+    bytes32[] calldata proof) external;
+
+// claim reward, send reward token to address specified by the earner (msg.sender)    
+function claimWithRecipient(
+    address to,
+    uint256[] calldata cumulativeAmounts,
+    uint64 _epoch,
+    bytes32[] calldata proof
+) external
+</code></pre>
+<p><strong>To get a user’s claimable reward amount:</strong></p>
+<p>A user’s currently claimable reward amount and the cumulative reward amount can be obtained by calling the <a href="#get-reward-merkle-proof-api">Get Reward Merkle Proof API</a> (enclosed together with the Merkle proof) or <a href="#get-reward-balance-api">Get Reward Balance API</a> (an API dedicated to display a user’s reward balances).</p>
+<h3 id="get-reward-merkle-proof-api"><a class="header" href="#get-reward-merkle-proof-api">Get Reward Merkle Proof API</a></h3>
+<p>This API returns the reward info and the corresponding Merkle proofs of a specific user in multiple campaigns that the user has participated in (i.e., has non-zero cumulative rewards in the campaign) and match the supplied filters in the request. The data included in the response can be used to call the <code>claim</code> or <code>claimWithRecipient</code> functions of the claim chain contract.</p>
+<h4 id="endpoint-3"><a class="header" href="#endpoint-3"><strong>Endpoint</strong></a></h4>
+<pre><code>POST https://incentra-prd.brevis.network/v1/getMerkleProofsBatch
+</code></pre>
+<h4 id="request-fields"><a class="header" href="#request-fields"><strong>Request Fields</strong></a></h4>
+<p>The request data should specify a user address and multiple filters for the campaign. </p>
+<p><strong>NOTE</strong>: <code>user_addr</code> is a required field while other filters are optional. If any filter is not specified in the request, it means no constraint for the filter.</p>
+<table>
+<thead>
+<tr><th width="135.546875">Field</th><th width="177.828125">Type</th><th> Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>user_addr</code></td><td><code>string</code></td><td>The user address.</td></tr>
+<tr><td><code>types</code></td><td><code>[CampaignType]</code></td><td>The campaign types (the detailed enum will be specified later). </td></tr>
+<tr><td><code>chain_id</code></td><td><code>[uint64]</code></td><td>The chain IDs where the DEX pools/Euler vaults/tokens are deployed.</td></tr>
+<tr><td><code>status</code></td><td><code>[CampaignStatus]</code></td><td>
+<p>The campaign statuses with enum:<br><code>INACTIVE = 3</code></p>
+<p><code>ACTIVE = 4</code></p>
+<p><code>ENDED = 5</code></p>
+</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>[string]</code></td><td>The campaign IDs.</td></tr>
+</tbody>
+</table>
+
+<p><strong><code>CampaignType</code></strong> enum:</p>
+<ul>
+<li>Liquidity campaign (Uniswap v3) = <strong>1</strong></li>
+<li>Liquidity campaign (PancakeSwap v3) = <strong>3</strong></li>
+<li>Liquidity campaign (QuickSwap v3) = <strong>5</strong></li>
+<li>Token holding campaign = <strong>1001</strong></li>
+<li>Euler borrow campaign = <strong>2001</strong></li>
+<li>Euler lend campaign = <strong>2002</strong></li>
+</ul>
+<h4 id="response-fields"><a class="header" href="#response-fields-2"><strong>Response Fields</strong> <a href="#response-fields-2" id="response-fields-1"></a></a></h4>
+<table>
+<thead>
+<tr><th width="144.19140625">Field</th><th width="262.71875">Type</th><th> Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>err</code></td><td><code>ErrMsg</code></td><td>Error details if the request failed.</td></tr>
+<tr><td><code>rewardsBatch</code></td><td><code>[SingleCampaignMerkle]</code></td><td>An array that includes the details about rewards info and the corresponding Merkle proofs of the user in all the campaigns that user has participated in and match the filters.</td></tr>
+</tbody>
+</table>
+
+<p><strong>ErrMsg Fields</strong></p>
+<table>
+<thead>
+<tr><th width="198.71484375">Field</th><th width="238.9609375">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>code</code></td><td><code>string</code></td><td>Error code</td></tr>
+<tr><td><code>msg</code></td><td><code>string</code></td><td>Error reason</td></tr>
+</tbody>
+</table>
+
+<p><strong>SingleCampaignMerkle Fields</strong></p>
+<table>
+<thead>
+<tr><th width="205.2421875">Fileld</th><th width="151.48046875">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>campaignId</code></td><td><code>string</code></td><td>The campaign ID.</td></tr>
+<tr><td><code>epoch</code></td><td><code>string</code></td><td>The rewards in the Merkle tree is accumulated up to this epoch number.</td></tr>
+<tr><td><code>claimChainId</code></td><td><code>string</code></td><td>The claim chain ID.</td></tr>
+<tr><td><code>claimContractAddr</code></td><td><code>string</code></td><td>The claim contract address.</td></tr>
+<tr><td><code>cumulativeRewards</code></td><td><code>[string]</code></td><td>The cumulative reward amount earned by the user in the campaign so far.</td></tr>
+<tr><td><code>merkleProof</code></td><td><code>[string]</code></td><td>The Merkle path proof to be submitted to the claim contract.</td></tr>
+<tr><td><code>claimableRewards</code></td><td><code>string</code></td><td>The claimable reward amount of this user in the campaign.</td></tr>
+</tbody>
+</table>
+
+<h4 id="example-request-curl-2"><a class="header" href="#example-request-curl-2">Example Request (curl)</a></h4>
+<pre><code class="language-powershell">curl --location 'https://incentra-prd.brevis.network/v1/getMerkleProofsBatch' \
+--header 'Content-Type: application/json' \
+--data '{
+    "user_addr": "0x0195b198088e464103e3840f52a1fa9ea81de84b",
+    "types": [
+        1001
+    ],
+    "chain_id": [
+        1
+    ],
+    "status": [],
+    "campaign_id": []
+}'
+</code></pre>
+<h3 id="get-reward-balance-api"><a class="header" href="#get-reward-balance-api">Get Reward Balance API</a></h3>
+<p>This API returns the cumulative and claimable reward balances of a specific user in all campaigns the user has participated in and match the specified filters.</p>
+<h4 id="endpoint-1-1"><a class="header" href="#endpoint-1-1"><strong>Endpoint</strong></a></h4>
+<pre><code>POST https://incentra-prd.brevis.network/v1/getUserRewardsBatch
+</code></pre>
+<h4 id="request-fields-1"><a class="header" href="#request-fields-1"><strong>Request Fields</strong></a></h4>
+<p>The request data should specify a user address and multiple filters for the campaign. </p>
+<p><strong>NOTE</strong>: <code>user_addr</code> is a required field while other filters are optional. If any filter is not specified in the request, it means no constraint for the filter.</p>
+<table>
+<thead>
+<tr><th width="135.546875">Field</th><th width="177.828125">Type</th><th> Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>user_addr</code></td><td><code>string</code></td><td>The user address.</td></tr>
+<tr><td><code>types</code></td><td><code>[CampaignType]</code></td><td>The campaign types (the detailed enum will be specified later). </td></tr>
+<tr><td><code>chain_id</code></td><td><code>[uint64]</code></td><td>The chain IDs where the DEX pools/Euler vaults/tokens are deployed.</td></tr>
+<tr><td><code>status</code></td><td><code>[CampaignStatus]</code></td><td>
+<p>The campaign statuses with enum:<br><code>INACTIVE = 3</code></p>
+<p><code>ACTIVE = 4</code></p>
+<p><code>ENDED = 5</code></p>
+</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>[string]</code></td><td>The campaign IDs.</td></tr>
+</tbody>
+</table>
+
+<p><strong><code>CampaignType</code></strong> enum:</p>
+<ul>
+<li>Liquidity campaign (Uniswap v3) = <strong>1</strong></li>
+<li>Liquidity campaign (PancakeSwap v3) = <strong>3</strong></li>
+<li>Liquidity campaign (QuickSwap v3) = <strong>5</strong></li>
+<li>Token holding campaign = <strong>1001</strong></li>
+<li>Euler borrow campaign = <strong>2001</strong></li>
+<li>Euler lend campaign = <strong>2002</strong></li>
+</ul>
+<h4 id="response-fields-1-1"><a class="header" href="#response-fields-1-1"><strong>Response Fields</strong> <a href="#response-fields-2" id="response-fields-2"></a></a></h4>
+<table>
+<thead>
+<tr><th width="186.3046875">Field</th><th width="225.66796875">Type</th><th> Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>err</code></td><td><code>ErrMsg</code></td><td>Error details if the request failed.</td></tr>
+<tr><td><code>rewardsBatch</code></td><td><code>[SingleCampaignReward]</code></td><td>An array that contains the reward balances of the user in all the campaigns that user has participated in and match the filters.</td></tr>
+</tbody>
+</table>
+
+<p><strong>ErrMsg Fields</strong></p>
+<table>
+<thead>
+<tr><th width="185.33203125">Field</th><th width="187.03515625">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>code</code></td><td><code>string</code></td><td>Error code.</td></tr>
+<tr><td><code>msg</code></td><td><code>string</code></td><td>Error reason.</td></tr>
+</tbody>
+</table>
+
+<p><strong>SingleCampaignReward Fields</strong></p>
+<table>
+<thead>
+<tr><th width="189.17578125">Fileld</th><th width="186.65234375">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>cumulative</code></td><td><code>string</code></td><td>The cumulative reward amount earned by the user in the campaign.</td></tr>
+<tr><td><code>claimable</code></td><td><code>string</code></td><td>The claimable reward amount of the user in the campaign.</td></tr>
+<tr><td><code>campaignId</code></td><td><code>string</code></td><td>The campaign ID.</td></tr>
+<tr><td><code>claimChainId</code></td><td><code>string</code></td><td>The claim chain ID.</td></tr>
+</tbody>
+</table>
+
+<h4 id="example-request-curl-1-1"><a class="header" href="#example-request-curl-1-1">Example Request (curl)</a></h4>
+<pre><code class="language-powershell">curl --location 'https://incentra-prd.brevis.network/v1/getUserRewardsBatch' \
+--header 'Content-Type: application/json' \
+--data '{
+    "user_addr": "0x0195b198088e464103e3840f52a1fa9ea81de84b",
+    "types": [
+        1001
+    ],
+    "chain_id": [
+        1
+    ],
+    "status": [],
+    "campaign_id": []
+}'
+</code></pre>
+<h2 id="claim-all-rewards-in-a-single-transaction"><a class="header" href="#claim-all-rewards-in-a-single-transaction">Claim all rewards in a single transaction</a></h2>
+<p>A user can claim all rewards from all participated campaigns on a given chain in a single transaction by calling the following functions of the <code>ClaimAll</code> contract deployed on that chain:</p>
+<p>{% code overflow=“wrap” %}</p>
+<pre><code class="language-solidity">// claim all same-chain rewards
+function claimAll(address earner, address[] calldata campaignAddrs) external;
+
+// claim all cross-chain rewards 
+// calldata can be fetched using the getMerkleProofsBatch API
+struct CampaignReward {
+    address campaignAddr; // the campaign claim contract address
+    uint256[] cumulativeAmounts;
+    uint64 epoch;
+    bytes32[] proof;
+}
+function claimAll(address earner, CampaignReward[] calldata campaignRewards) external;
+
+// claim all same-chain and cross-chain rewards
+function claimAll(
+    address earner, 
+    address[] calldata sameChainCampaignAddrs, 
+    CampaignReward[] calldata crossChainCampaignRewards) external;
+</code></pre>
+<p>{% endcode %}</p>
+<p>The currently deployed <code>ClaimAll</code> contract addresses are:</p>
+<table>
+<thead>
+<tr><th width="254.89453125">Chain</th><th>ClaimAll contract address</th></tr>
+</thead>
+<tbody>
+<tr><td>Ethereum</td><td><a href="https://etherscan.io/address/0x39ae8501186e8f4d7b120981ddad5db8915a6371">0x39ae8501186E8F4d7b120981DDaD5db8915A6371</a></td></tr>
+<tr><td>BNB Chain</td><td><a href="https://bscscan.com/address/0x3704597fdE1f11E4C87423B9246b295c31bfbb8d">0x3704597fdE1f11E4C87423B9246b295c31bfbb8d</a></td></tr>
+<tr><td>Arbitrum</td><td><a href="https://arbiscan.io/address/0x273d0d19eaC2861FCF6B21893AD6d71b018E25aB">0x273d0d19eaC2861FCF6B21893AD6d71b018E25aB</a></td></tr>
+<tr><td>World Chain</td><td><a href="https://worldscan.org/address/0xc8c741C7C4844Cd3C4B60d8dc95DF1DC452C53c6">0xc8c741C7C4844Cd3C4B60d8dc95DF1DC452C53c6</a></td></tr>
+<tr><td>Arbitrum Sepolia Testnet</td><td><a href="https://sepolia.arbiscan.io/address/0x8fa1Bd18F30e0b387E2f24279Eca033eb2a30327">0x8fa1Bd18F30e0b387E2f24279Eca033eb2a30327</a></td></tr>
+<tr><td>Base Sepolia Testnet</td><td><a href="https://sepolia.basescan.org/address/0x39ae8501186E8F4d7b120981DDaD5db8915A6371">0x39ae8501186E8F4d7b120981DDaD5db8915A6371</a></td></tr>
+</tbody>
+</table>
+
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="get-user-leaderboard"><a class="header" href="#get-user-leaderboard">Get User Leaderboard</a></h1>
+<p>Retrieve a CSV file that displays all the users who have rewards in the campaign and their cumulative rewards by a given Campaign ID.</p>
+<h3 id="endpoint-4"><a class="header" href="#endpoint-4"> Endpoint</a></h3>
+<pre><code>GET  https://incentra-prd.brevis.network/sdk/v1/userRewards
+</code></pre>
+<h3 id="example-curl"><a class="header" href="#example-curl">Example (curl)</a></h3>
+<pre><code class="language-sh">curl https://incentra-prd.brevis.network/sdk/v1/userRewards?campaign_id=1745558044
+</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">{
+    "err": null,
+    "url": "https://incentra-user-reward-csv.s3.us-west-2.amazonaws.com/campaign-1745985401-rewards-20250506-061050.csv"
+}
+</code></pre>
+<p><strong>CSV name rule:</strong></p>
+<pre><code class="language-css">campaign-{campaignID}-rewards-{dateTime}.csv
+</code></pre>
+<ul>
+<li><code>campaignID</code>: The unique ID for a campaign</li>
+<li><code>dateTime</code>: In <code>"YYMMDD-HHmmss"</code> format, UTC. For example, <code>20250506-151050</code> represents <code>2025-05-06 15:10:50.</code></li>
+</ul>
+<h3 id="csv-format"><a class="header" href="#csv-format">CSV Format</a></h3>
+<p>The CSV including the 2 columns, User And EarnedAmount</p>
+<ul>
+<li>User: user address</li>
+<li>EarnedAmount: the accumulated amount of reward tokens earned by each user in the campaign</li>
+</ul>
+<p>The CSV table sort in descending order by Total Rewards Earned.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="supported-chains-and-protocols"><a class="header" href="#supported-chains-and-protocols">Supported Chains and Protocols</a></h1>
+<p><em><strong>If you would like to create campaigns for new chains or new protocols, please contact us.</strong></em></p>
+<h2 id="supported-protocols"><a class="header" href="#supported-protocols">Supported Protocols</a></h2>
+<table>
+<thead>
+<tr><th width="161.96875">Protocol Type</th><th width="222.15625">Campaign Type</th><th>Protocol Name</th></tr>
+</thead>
+<tbody>
+<tr><td>ERC-20 Token</td><td>Token Holding</td><td>Any protocol requiring ERC-20 token holding</td></tr>
+<tr><td>DEX</td><td>Concentrated Liquidity</td><td><a href="https://app.uniswap.org/">Uniswap v3</a></td></tr>
+<tr><td>DEX</td><td>Concentrated Liquidity</td><td><a href="https://dapp.quickswap.exchange/swap">QuickSwap v3</a></td></tr>
+<tr><td>DEX</td><td>Concentrated Liquidity</td><td>PancakeSwap v3 (coming soon)</td></tr>
+<tr><td>DEX</td><td>Concentrated Liquidity</td><td>PancakeSwap v4 (coming soon)</td></tr>
+<tr><td>Lending Protocol</td><td>Lend and Borrow</td><td><a href="https://app.euler.finance/">Euler Finance</a></td></tr>
+<tr><td>ALM</td><td>Concentrated Liquidity</td><td><a href="https://app.beefy.finance/">Beefy</a></td></tr>
+<tr><td>ALM</td><td>Concentrated Liquidity</td><td><a href="https://app.gamma.xyz/">Gamma</a></td></tr>
+</tbody>
+</table>
+
+<h2 id="supported-chains"><a class="header" href="#supported-chains">Supported Chains</a></h2>
+<h4 id="data-source-chain"><a class="header" href="#data-source-chain">Data Source Chain</a></h4>
+<p>You can incentivize protocols deployed on the following chains:</p>
+<ul>
+<li>Ethereum</li>
+<li>BNB Chain</li>
+</ul>
+<h4 id="reward-claim-chain"><a class="header" href="#reward-claim-chain">Reward Claim Chain</a></h4>
+<p>You can create campaigns with the reward tokens deployed on the following chains: </p>
+<ul>
+<li>Ethereum</li>
+<li>BNB Chain</li>
+</ul>
+<p><strong>NOTE</strong>:  Reward claim and the protocol to be incentivized can be deployed on different chains. <a href="#read-and-claim-rewards">Here</a> are more details.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="github"><a class="header" href="#github">Github</a></h1>
+<p>This page redirects you to the external repository:</p>
+<p>Open Brevis Incentra Contracts 👉 <a href="https://github.com/brevis-network/incentra-contracts" target="_blank" rel="noreferrer">https://github.com/brevis-network/incentra-contracts</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="audit-reports"><a class="header" href="#audit-reports">Audit Reports</a></h1>
+<p>This page redirects you to the external URL:</p>
+<p>View Audit Reports 👉 <a href="https://github.com/brevis-network/incentra-contracts/tree/main/audit" target="_blank" rel="noreferrer">https://github.com/brevis-network/incentra-contracts/tree/main/audit</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>
