@@ -39,8 +39,8 @@
 ## Resources
 
 * [Supported Chains and Protocols](resources/supported-chains-and-protocols.md)
-* [Github](https://github.com/brevis-network/incentra-contracts)
+* [Github](resources/github.md)
 
 ***
 
-* [Audit Reports](https://github.com/brevis-network/incentra-contracts/tree/main/audit)
+* [Audit reports](audit-reports.md)
