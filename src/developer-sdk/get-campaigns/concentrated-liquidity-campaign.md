@@ -1,8 +1,3 @@
----
-description: >-
-  API to retrieve fee-based liquidity farming campaigns that incentivizes
-  concentrated liquidity in DEX.
----
 
 # Concentrated Liquidity Campaign
 
@@ -62,7 +57,7 @@ Each campaign includes the following fields:
 
 ### Example Request (curl)
 
-{% code title="data.json" %}
+
 ```json
 {
     "chain_id": [
@@ -87,7 +82,7 @@ Each campaign includes the following fields:
     "user_address": [] // no constraint for this filter 
 }
 ```
-{% endcode %}
+
 
 Post with `data.json`
 

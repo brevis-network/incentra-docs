@@ -1,6 +1,3 @@
----
-description: Token holders are rewarded based on the TWA balance of a ERC-20 token
----
 
 # Token Holding Campaigns
 

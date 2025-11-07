@@ -1,6 +1,3 @@
----
-description: Users are rewarded for lending to or borrowing from a protocol
----
 
 # Lend and Borrow Campaigns
 

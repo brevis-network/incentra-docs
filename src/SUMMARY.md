@@ -1,6 +1,6 @@
 # Table of contents
 
-## Welcome
+# Welcome
 
 * [Introduction](README.md)
 * [Why Use Incentra](welcome/why-use-incentra.md)
@@ -14,19 +14,19 @@
 * [Technical Architecture](technical-architecture.md)
 * [Fee](fee.md)
 
-## Create Campaigns
+# Create Campaigns
 
 * [Getting Started](create-campaigns/getting-started.md)
 * [Token Holding Campaign](create-campaigns/token-holding-campaign.md)
 * [Concentrated Liquidity Campaign](create-campaigns/concentrated-liquidity-campaign.md)
 * [Lend and Borrow Campaign (Euler)](create-campaigns/lend-and-borrow-campaign-euler.md)
 
-## Earn Rewards
+# Earn Rewards
 
 * [Campaign Rules](earn-rewards/campaign-rules.md)
 * [User Tutorials](earn-rewards/user-tutorials.md)
 
-## Developer SDK
+# Developer SDK
 
 * [Guidelines](developer-sdk/guidelines.md)
 * [Get Campaigns](developer-sdk/get-campaigns/README.md)
@@ -36,7 +36,7 @@
 * [Read and Claim Rewards](developer-sdk/read-and-claim-rewards.md)
 * [Get User Leaderboard](developer-sdk/get-user-leaderboard.md)
 
-## Resources
+# Resources
 
 * [Supported Chains and Protocols](resources/supported-chains-and-protocols.md)
 * [Github](resources/github.md)

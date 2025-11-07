@@ -1,6 +1,3 @@
----
-description: Liquidity Providers (LPs) are rewarded based on the fees earned on DEX
----
 
 # Concentrated Liquidity Campaigns
 

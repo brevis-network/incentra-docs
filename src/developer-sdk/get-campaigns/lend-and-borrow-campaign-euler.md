@@ -1,6 +1,3 @@
----
-description: Retrieve campaigns that incentivizes lending/borrowing from Euler vaults.
----
 
 # Lend and Borrow Campaign (Euler)
 
@@ -43,7 +40,7 @@ The `CampaignStatus` enum has the following values:
 
 ### Post Example (curl)
 
-{% code title="data.json" %}
+
 ```json
 {
     "chain_id": [
@@ -66,7 +63,7 @@ The `CampaignStatus` enum has the following values:
     ]
 }
 ```
-{% endcode %}
+
 
 post with `data.json`:
 

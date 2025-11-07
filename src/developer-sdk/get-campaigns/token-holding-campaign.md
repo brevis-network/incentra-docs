@@ -1,6 +1,3 @@
----
-description: API to retrieve campaign where users get rewards for holding an ERC-20 token.
----
 
 # Token Holding Campaign
 
@@ -43,7 +40,7 @@ The `CampaignStatus` enum has the following values:
 
 ### Example Request (curl)
 
-{% code title="data.json" %}
+
 ```json
 {
     "chain_id": [
@@ -65,7 +62,7 @@ The `CampaignStatus` enum has the following values:
     ]
 }
 ```
-{% endcode %}
+
 
 post with `data.json`
 

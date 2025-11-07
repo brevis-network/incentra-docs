@@ -1,6 +1,3 @@
----
-description: Everything you need to launch your first campaign
----
 
 # Getting Started
 
@@ -15,7 +12,7 @@ On Incentra, campaigns can be created and managed in the [Brevis Incentra Portal
 
 Before getting started, please note that **your wallet address must be whitelisted first** to create a campaign. While anyone can create a campaign through the smart contract, Incentra exclusively recognizes and processes those created by whitelisted addresses.  Please contact us to get whitelisted.&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-05-15 at 17.01.27.png" alt=""><figcaption></figcaption></figure>
+<img src="../.gitbook/assets/Screenshot 2025-05-15 at 17.01.27.png" alt=""><figcaption></figcaption>
 
 ### Check Supported Chains
 

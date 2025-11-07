@@ -1,6 +1,3 @@
----
-description: Everything you need to participate in a campaign
----
 
 # Campaign Rules
 

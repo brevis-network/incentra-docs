@@ -1,6 +1,3 @@
----
-description: Incentra offers flexible campaign types
----
 
 # Campaign Types
 

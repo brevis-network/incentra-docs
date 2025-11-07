@@ -181,7 +181,7 @@ curl --location 'https://incentra-prd.brevis.network/v1/getUserRewardsBatch' \
 
 A user can claim all rewards from all participated campaigns on a given chain in a single transaction by calling the following functions of the `ClaimAll` contract deployed on that chain:
 
-{% code overflow="wrap" %}
+
 ```solidity
 // claim all same-chain rewards
 function claimAll(address earner, address[] calldata campaignAddrs) external;
@@ -202,7 +202,7 @@ function claimAll(
     address[] calldata sameChainCampaignAddrs, 
     CampaignReward[] calldata crossChainCampaignRewards) external;
 ```
-{% endcode %}
+
 
 The currently deployed `ClaimAll` contract addresses are:
 

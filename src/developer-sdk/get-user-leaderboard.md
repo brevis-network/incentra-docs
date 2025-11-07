@@ -1,6 +1,3 @@
----
-description: Export the CSV of user rewards in a campaign
----
 
 # Get User Leaderboard
 

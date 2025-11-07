@@ -1,12 +1,9 @@
----
-description: A 10,000-feet overview of Incentra's technical architecture
----
 
 # Technical Architecture
 
 The diagram below shows Incentra's high-level architecture and workflow to support a campaign.&#x20;
 
-<figure><img src=".gitbook/assets/Screenshot 2025-05-02 at 4.16.53 PM.png" alt=""><figcaption></figcaption></figure>
+<img src=".gitbook/assets/Screenshot 2025-05-02 at 4.16.53 PM.png" alt=""><figcaption></figcaption>
 
 A campaign is divided into multiple epochs (e.g., 4 hours per epoch). Once a campaign is created, the Incentra server performs the following actions during _each epoch_:
 

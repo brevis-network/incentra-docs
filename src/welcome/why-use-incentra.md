@@ -1,6 +1,3 @@
----
-description: Reliable, Secure, and Verifiable
----
 
 # Why Use Incentra
 
