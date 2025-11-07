@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-3c8a8ee5.js";
+            window.path_to_searchindex_js = "../searchindex-3dbab584.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-a782aae6.js"></script>
+        <script src="../toc-d0d78757.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -398,7 +398,6 @@ function claimWithRecipient(
 </code></pre>
 <h2 id="claim-all-rewards-in-a-single-transaction"><a class="header" href="#claim-all-rewards-in-a-single-transaction">Claim all rewards in a single transaction</a></h2>
 <p>A user can claim all rewards from all participated campaigns on a given chain in a single transaction by calling the following functions of the <code>ClaimAll</code> contract deployed on that chain:</p>
-<p>{% code overflow=“wrap” %}</p>
 <pre><code class="language-solidity">// claim all same-chain rewards
 function claimAll(address earner, address[] calldata campaignAddrs) external;
 
@@ -418,7 +417,6 @@ function claimAll(
     address[] calldata sameChainCampaignAddrs, 
     CampaignReward[] calldata crossChainCampaignRewards) external;
 </code></pre>
-<p>{% endcode %}</p>
 <p>The currently deployed <code>ClaimAll</code> contract addresses are:</p>
 <table>
 <thead>

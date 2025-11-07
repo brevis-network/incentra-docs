@@ -36,10 +36,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-3c8a8ee5.js";
+            window.path_to_searchindex_js = "../../searchindex-3dbab584.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-a782aae6.js"></script>
+        <script src="../../toc-d0d78757.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,9 +175,7 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <hr>
-<h2 id="description-retrieve-campaigns-that-incentivizes-lendingborrowing-from-euler-vaults"><a class="header" href="#description-retrieve-campaigns-that-incentivizes-lendingborrowing-from-euler-vaults">description: Retrieve campaigns that incentivizes lending/borrowing from Euler vaults.</a></h2>
-<h1 id="lend-and-borrow-campaign-euler"><a class="header" href="#lend-and-borrow-campaign-euler">Lend and Borrow Campaign (Euler)</a></h1>
+                        <h1 id="lend-and-borrow-campaign-euler"><a class="header" href="#lend-and-borrow-campaign-euler">Lend and Borrow Campaign (Euler)</a></h1>
 <p>This page specifies the API for retrieving details about Lend/Borrow campaigns for the Euler protocol.</p>
 <h3 id="endpoint"><a class="header" href="#endpoint">Endpoint</a></h3>
 <pre><code>POST https://incentra-prd.brevis.network/sdk/v1/eulerCampaigns
@@ -259,7 +257,6 @@
 </table>
 
 <h3 id="post-example-curl"><a class="header" href="#post-example-curl">Post Example (curl)</a></h3>
-<p>{% code title=“data.json” %}</p>
 <pre><code class="language-json">{
     "chain_id": [
         1,
@@ -281,7 +278,6 @@
     ]
 }
 </code></pre>
-<p>{% endcode %}</p>
 <p>post with <code>data.json</code>:</p>
 <pre><code class="language-sh">curl -X POST -H "Content-Type: application/json" -d @data.json POST https://incentra-prd.brevis.network/sdk/v1/eulerCampaigns
 </code></pre>

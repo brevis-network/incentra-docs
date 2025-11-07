@@ -36,10 +36,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-3c8a8ee5.js";
+            window.path_to_searchindex_js = "../../searchindex-3dbab584.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-a782aae6.js"></script>
+        <script src="../../toc-d0d78757.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,11 +175,7 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <hr>
-<h2 id="description---api-to-retrieve-fee-based-liquidity-farming-campaigns-that-incentivizes-concentrated-liquidity-in-dex"><a class="header" href="#description---api-to-retrieve-fee-based-liquidity-farming-campaigns-that-incentivizes-concentrated-liquidity-in-dex">description: &gt;-
-API to retrieve fee-based liquidity farming campaigns that incentivizes
-concentrated liquidity in DEX.</a></h2>
-<h1 id="concentrated-liquidity-campaign"><a class="header" href="#concentrated-liquidity-campaign">Concentrated Liquidity Campaign</a></h1>
+                        <h1 id="concentrated-liquidity-campaign"><a class="header" href="#concentrated-liquidity-campaign">Concentrated Liquidity Campaign</a></h1>
 <p>This page provides a detailed reference for the <code>GetLiquidityCampaigns</code> API, which allows you to retrieve information about concentrated liquidity campaigns for DEXes.</p>
 <h3 id="endpoint"><a class="header" href="#endpoint">Endpoint</a></h3>
 <pre><code>POST https://incentra-prd.brevis.network/sdk/v1/liquidityCampaigns
@@ -282,7 +278,6 @@ concentrated liquidity in DEX.</a></h2>
 </table>
 
 <h3 id="example-request-curl"><a class="header" href="#example-request-curl">Example Request (curl)</a></h3>
-<p>{% code title=“data.json” %}</p>
 <pre><code class="language-json">{
     "chain_id": [
         1,
@@ -306,7 +301,6 @@ concentrated liquidity in DEX.</a></h2>
     "user_address": [] // no constraint for this filter 
 }
 </code></pre>
-<p>{% endcode %}</p>
 <p>Post with <code>data.json</code></p>
 <pre><code class="language-sh">curl -X POST -H "Content-Type: application/json" -d @data.json https://incentra-prd.brevis.network/sdk/v1/liquidityCampaigns
 </code></pre>
