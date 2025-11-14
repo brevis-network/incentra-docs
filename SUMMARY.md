@@ -4,15 +4,12 @@
 
 * [Introduction](README.md)
 * [Why Use Incentra](welcome/why-use-incentra.md)
-
-***
-
-* [Campaign Types](campaign-types/README.md)
-  * [Token Holding Campaigns](campaign-types/token-holding-campaigns.md)
-  * [Concentrated Liquidity Campaigns](campaign-types/concentrated-liquidity-campaigns.md)
-  * [Lend and Borrow Campaigns](campaign-types/lend-and-borrow-campaigns.md)
-* [Technical Architecture](technical-architecture.md)
-* [Fee](fee.md)
+* [Campaign Types](welcome/campaign-types/README.md)
+  * [Token Holding Campaigns](welcome/campaign-types/token-holding-campaigns.md)
+  * [Concentrated Liquidity Campaigns](welcome/campaign-types/concentrated-liquidity-campaigns.md)
+  * [Lend and Borrow Campaigns](welcome/campaign-types/lend-and-borrow-campaigns.md)
+* [Technical Architecture](welcome/technical-architecture.md)
+* [Fee](welcome/fee.md)
 
 ## Create Campaigns
 
