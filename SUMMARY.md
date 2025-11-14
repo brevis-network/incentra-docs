@@ -40,7 +40,4 @@
 
 * [Supported Chains and Protocols](resources/supported-chains-and-protocols.md)
 * [Github](resources/github.md)
-
-***
-
-* [Audit reports](audit-reports.md)
+* [Audit reports](resources/audit-reports.md)
