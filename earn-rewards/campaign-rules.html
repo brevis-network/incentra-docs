@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-3dbab584.js";
+            window.path_to_searchindex_js = "../searchindex-3eeb8d76.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-d0d78757.js"></script>
+        <script src="../toc-80d176f6.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -183,7 +183,7 @@
 <p>Also, for the 1st epoch after the campaign starts, it may take significantly more time (4 to 12 hours) to update the rewards due to the time to index and fetch relevant historical on-chain data (events, storage, transactions).</p>
 <p>In some rare cases (e.g., there is a spike in campaign participants), the rewards update delay may be significantly longer than 4 hours as we expand system capacity and resolve the issues. Rest assured that the rewards in the delayed epochs will still be proved.</p>
 <h3 id="dust-rewards"><a class="header" href="#dust-rewards">Dust Rewards</a></h3>
-<p>For each epoch, if a user’s reward amount &lt; 1 wei (e.g., less than 10^-18 if the reward token decimal is 18), the user’s rewards won’t be attested for the epoch.</p>
+<p>For each epoch, if a user’s rewards &lt; $0.0001 in the epoch, the user’s rewards won’t be attested for the epoch.</p>
 <h2 id="reward-rules-for-each-campaign-types"><a class="header" href="#reward-rules-for-each-campaign-types">Reward Rules for Each Campaign Types</a></h2>
 <h3 id="concentrated-liquidity-campaign"><a class="header" href="#concentrated-liquidity-campaign">Concentrated Liquidity Campaign</a></h3>
 <p>In a concentrated liquidity campaign, each liquidity provider (LP) is allocated rewards proportional to the fees earned:</p>
