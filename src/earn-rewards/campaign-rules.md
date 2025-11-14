@@ -15,7 +15,7 @@ In some rare cases (e.g., there is a spike in campaign participants), the reward
 
 ### Dust Rewards
 
-For each epoch, if a user's reward amount < 1 wei (e.g., less than 10^-18 if the reward token decimal is 18), the user's rewards won't be attested for the epoch.
+For each epoch, if a user's rewards < $0.0001 in the epoch, the user's rewards won't be attested for the epoch.
 
 ## Reward Rules for Each Campaign Types
 
