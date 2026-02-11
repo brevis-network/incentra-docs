@@ -37,7 +37,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-6c94ea89.js";
+            window.path_to_searchindex_js = "searchindex-041071aa.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-59140b12.js"></script>
@@ -489,14 +489,24 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <p>If any filter is not specified, it means there is no constraint for this filter.</p>
 <p><code>CampaignType</code> <strong>Enum</strong></p>
 <p>The <code>CampaignType</code> enum has the following values:</p>
-<ul>
-<li><code>UNISWAP_V3</code></li>
-<li><code>UNISWAP_V4</code></li>
-<li><code>PANCAKESWAP_V3</code></li>
-<li><code>PANCAKESWAP_V4_CL</code> </li>
-<li><code>PANCKAESWAP_V4_BIN</code></li>
-<li><code>QUICKSWAP_V3</code></li>
-</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>CampaignType</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>UNISWAP_V3</code></td><td>1</td></tr>
+<tr><td><code>UNISWAP_V4</code></td><td>2</td></tr>
+<tr><td><code>PANCAKE_V3</code></td><td>3</td></tr>
+<tr><td><del><code>PANCAKE_V4</code></del></td><td><del>4</del></td></tr>
+<tr><td><code>QUICKSWAP_V3</code></td><td>5</td></tr>
+<tr><td><code>KOALASWAP</code></td><td>6</td></tr>
+<tr><td><code>ETHEREX</code></td><td>7</td></tr>
+<tr><td><code>PANCAKE_V4_CL</code></td><td>8</td></tr>
+<tr><td><code>PANCAKE_V4_BIN</code></td><td>9</td></tr>
+</tbody>
+</table>
+</div>
 <p><br><code>CampaignStatus</code> <strong>Enum</strong></p>
 <p>The <code>CampaignStatus</code> enum has the following values:</p>
 <ul>
