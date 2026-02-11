@@ -15,8 +15,6 @@ POST https://incentra-prd.brevis.network/sdk/v1/liquidityCampaigns
 
 If any filter is not specified, it means there is no constraint for this filter.
 
-`CampaignType` **Enum**
-
 The `CampaignType` enum has the following values:
 
 <table data-full-width="true"><thead><tr><th>CampaignType</th><th>Value</th></tr></thead><tbody><tr><td><code>UNISWAP_V3</code></td><td>1</td></tr><tr><td><code>UNISWAP_V4</code></td><td>2</td></tr><tr><td><code>PANCAKE_V3</code></td><td>3</td></tr><tr><td><del><code>PANCAKE_V4</code></del> </td><td><del>4</del></td></tr><tr><td><code>QUICKSWAP_V3</code></td><td>5</td></tr><tr><td><code>KOALASWAP</code></td><td>6</td></tr><tr><td><code>PANCAKE_V4_CL</code></td><td>8</td></tr><tr><td><code>PANCAKE_V4_BIN</code></td><td>9</td></tr></tbody></table>
