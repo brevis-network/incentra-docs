@@ -27,7 +27,6 @@ The `CampaignType` enum has the following values:
 | ~~`PANCAKE_V4`~~  | ~~4~~ |
 | `QUICKSWAP_V3`    | 5     |
 | `KOALASWAP`       | 6     |
-| `ETHEREX`         | 7     |
 | `PANCAKE_V4_CL`   | 8     |
 | `PANCAKE_V4_BIN`  | 9     |
 
