@@ -27,7 +27,8 @@ The `CampaignType` enum has the following values:
 * `UNISWAP_V3`
 * `UNISWAP_V4`
 * `PANCAKESWAP_V3`
-* `PANCAKESWAP_V4`
+* `PANCAKESWAP_V4_CL`&#x20;
+* `PANCKAESWAP_V4_BIN`
 * `QUICKSWAP_V3`
 
 \
