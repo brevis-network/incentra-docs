@@ -24,12 +24,17 @@ If any filter is not specified, it means there is no constraint for this filter.
 
 The `CampaignType` enum has the following values:
 
-* `UNISWAP_V3`
-* `UNISWAP_V4`
-* `PANCAKESWAP_V3`
-* `PANCAKESWAP_V4_CL`&#x20;
-* `PANCKAESWAP_V4_BIN`
-* `QUICKSWAP_V3`
+| CampaignType      | Value |
+| ----------------- | ----- |
+| `UNISWAP_V3`      | 1     |
+| `UNISWAP_V4`      | 2     |
+| `PANCAKE_V3`      | 3     |
+| ~~`PANCAKE_V4`~~  | ~~4~~ |
+| `QUICKSWAP_V3`    | 5     |
+| `KOALASWAP`       | 6     |
+| `ETHEREX`         | 7     |
+| `PANCAKE_V4_CL`   | 8     |
+| `PANCAKE_V4_BIN`  | 9     |
 
 \
 `CampaignStatus` **Enum**
