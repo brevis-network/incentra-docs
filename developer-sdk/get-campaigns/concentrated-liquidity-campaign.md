@@ -24,16 +24,7 @@ If any filter is not specified, it means there is no constraint for this filter.
 
 The `CampaignType` enum has the following values:
 
-| CampaignType      | Value |
-| ----------------- | ----- |
-| `UNISWAP_V3`      | 1     |
-| `UNISWAP_V4`      | 2     |
-| `PANCAKE_V3`      | 3     |
-| ~~`PANCAKE_V4`~~  | ~~4~~ |
-| `QUICKSWAP_V3`    | 5     |
-| `KOALASWAP`       | 6     |
-| `PANCAKE_V4_CL`   | 8     |
-| `PANCAKE_V4_BIN`  | 9     |
+<table data-full-width="true"><thead><tr><th>CampaignType</th><th>Value</th></tr></thead><tbody><tr><td><code>UNISWAP_V3</code></td><td>1</td></tr><tr><td><code>UNISWAP_V4</code></td><td>2</td></tr><tr><td><code>PANCAKE_V3</code></td><td>3</td></tr><tr><td><del><code>PANCAKE_V4</code></del> </td><td><del>4</del></td></tr><tr><td><code>QUICKSWAP_V3</code></td><td>5</td></tr><tr><td><code>KOALASWAP</code></td><td>6</td></tr><tr><td><code>PANCAKE_V4_CL</code></td><td>8</td></tr><tr><td><code>PANCAKE_V4_BIN</code></td><td>9</td></tr></tbody></table>
 
 \
 `CampaignStatus` **Enum**
