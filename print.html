@@ -37,10 +37,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-33bda520.js";
+            window.path_to_searchindex_js = "searchindex-a77252e5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-59140b12.js"></script>
+        <script src="toc-2ab97246.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -294,7 +294,7 @@
 <ul>
 <li><a href="#token-holding-campaign">Create a Token Holding Campaign</a></li>
 <li><a href="#concentrated-liquidity-campaign">Create a Concentrated Liquidity Campaign</a></li>
-<li><a href="#lend-and-borrow-campaign-euler">Create a Lend and Borrow Campaign (Euler)</a></li>
+<li><a href="#lend-and-borrow-campaign">Create a Lend and Borrow Campaign (Euler)</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="token-holding-campaign"><a class="header" href="#token-holding-campaign">Token Holding Campaign</a></h1>
@@ -367,19 +367,34 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <p>Once the reward tokens are deposited, congratulations — you’re all set!</p>
 <p><img src=".gitbook/assets/Screenshot 2025-05-17 at 19.12.55.png" alt=""><figcaption></figcaption></p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="lend-and-borrow-campaign-euler"><a class="header" href="#lend-and-borrow-campaign-euler">Lend and Borrow Campaign (Euler)</a></h1>
+<h1 id="lend-and-borrow-campaign"><a class="header" href="#lend-and-borrow-campaign">Lend and Borrow Campaign</a></h1>
 <p>Click “Create a new campaign” to create a campaign, and select the Campaign Type you would like to create.</p>
 <p><img src=".gitbook/assets/Screenshot 2025-05-15 at 17.00.53.png" alt=""><figcaption></figcaption></p>
 <p><img src=".gitbook/assets/Screenshot 2025-05-18 at 17.35.29.png" alt=""><figcaption></figcaption></p>
-<p>Select Euler as the lending protocol to be incentivized.</p>
-<p><img src=".gitbook/assets/Screenshot 2025-05-18 at 17.34.40.png" alt=""><figcaption></figcaption></p>
+<p>Select the lending protocol (Euler/Aave/Morpho) to be incentivized.</p>
+<p><img src=".gitbook/assets/Screenshot 2026-02-12 at 23.52.47 (1).png" alt=""><figcaption></figcaption></p>
 <p>To create a Euler campaign, you need to configure the following info:</p>
 <ul>
 <li>Campaign Name</li>
 <li>Action: the action you would like to incentivize - supply to a vault or borrow from a vault</li>
-<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically</li>
+<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault</li>
 </ul>
 <p><img src=".gitbook/assets/Screenshot 2025-05-18 at 18.09.35.png" alt=""><figcaption></figcaption></p>
+<p>To create an Aave campaign, you need to configure the following info:</p>
+<ul>
+<li>Campaign Name</li>
+<li>Action: the action you would like to incentivize - supply to a pool or borrow from a pool. For a lending campaign, enabling net lending is optional if you would like to set up a net lending campaign and users will only receive rewards based on their net position values in the pool</li>
+<li>Pool Info: select the chain where the pool is deployed and enter the aToken address. The pool information should be displayed automatically. You may also enter the pool name if this is the first time setting up a campaign for this pool</li>
+</ul>
+<p><img src=".gitbook/assets/Screenshot 2026-02-13 at 00.02.34.png" alt=""><figcaption></figcaption></p>
+<p>To create a Morpho campaign, you need to configure the following info:</p>
+<ul>
+<li>Campaign Name</li>
+<li>Action: the action you would like to incentivize - supply to a vault. Only lend campaign is currently supported for Morpho</li>
+<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault</li>
+</ul>
+<p><img src=".gitbook/assets/Screenshot 2026-02-13 at 00.10.11.png" alt=""><figcaption></figcaption></p>
+<p>The following parameters may also need to be configured for Euler, Aave, and Morpho campaigns:</p>
 <ul>
 <li>Campaign Start Time and End Time: select the start time and end time, you could also select to set a 7-day/14-day/30-day/90-day campaign and the campaign end time will be displayed automatically</li>
 <li>Blacklist Address List: it is optional to exclude specific addresses from receiving rewards</li>
@@ -463,7 +478,7 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <ol>
 <li><a href="#concentrated-liquidity-campaign-2"><strong>Concentrated Liquidity Campaigns</strong></a> - Incentivize providing concentrated liquidity in DEXes.</li>
 <li><a href="#token-holding-campaign-2"><strong>Token Holding Campaigns</strong></a> - Incentivize holding specific tokens.</li>
-<li><a href="#lend-and-borrow-campaign-euler-1"><strong>Lend and Borrow Campaigns (Euler)</strong> </a>- Incentivize lending or borrowing from Euler finance.</li>
+<li><a href="#lend-and-borrow-campaign-euler"><strong>Lend and Borrow Campaigns (Euler)</strong> </a>- Incentivize lending or borrowing from Euler finance.</li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="concentrated-liquidity-campaign-2"><a class="header" href="#concentrated-liquidity-campaign-2">Concentrated Liquidity Campaign</a></h1>
@@ -703,7 +718,7 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <pre><code class="language-sh">curl -X POST -H "Content-Type: application/json" -d @data.json https://incentra-prd.brevis.network/sdk/v1/tokenholdingCampaignsityCampaigns
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="lend-and-borrow-campaign-euler-1"><a class="header" href="#lend-and-borrow-campaign-euler-1">Lend and Borrow Campaign (Euler)</a></h1>
+<h1 id="lend-and-borrow-campaign-euler"><a class="header" href="#lend-and-borrow-campaign-euler">Lend and Borrow Campaign (Euler)</a></h1>
 <p>This page specifies the API for retrieving details about Lend/Borrow campaigns for the Euler protocol.</p>
 <h3 id="endpoint-2"><a class="header" href="#endpoint-2">Endpoint</a></h3>
 <pre><code>POST https://incentra-prd.brevis.network/sdk/v1/eulerCampaigns
