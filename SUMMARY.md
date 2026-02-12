@@ -16,7 +16,7 @@
 * [Getting Started](create-campaigns/getting-started.md)
 * [Token Holding Campaign](create-campaigns/token-holding-campaign.md)
 * [Concentrated Liquidity Campaign](create-campaigns/concentrated-liquidity-campaign.md)
-* [Lend and Borrow Campaign (Euler)](create-campaigns/lend-and-borrow-campaign-euler.md)
+* [Lend and Borrow Campaign](create-campaigns/lend-and-borrow-campaign.md)
 
 ## Earn Rewards
 
