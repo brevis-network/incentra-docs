@@ -1,5 +1,5 @@
 
-# Lend and Borrow Campaign (Euler)
+# Lend and Borrow Campaign
 
 Click “Create a new campaign” to create a campaign, and select the Campaign Type you would like to create.
 
@@ -7,17 +7,35 @@ Click “Create a new campaign” to create a campaign, and select the Campaign 
 
 <img src="../.gitbook/assets/Screenshot 2025-05-18 at 17.35.29.png" alt=""><figcaption></figcaption>
 
-Select Euler as the lending protocol to be incentivized.
+Select the lending protocol (Euler/Aave/Morpho) to be incentivized.
 
-<img src="../.gitbook/assets/Screenshot 2025-05-18 at 17.34.40.png" alt=""><figcaption></figcaption>
+<img src="../.gitbook/assets/Screenshot 2026-02-12 at 23.52.47 (1).png" alt=""><figcaption></figcaption>
 
 To create a Euler campaign, you need to configure the following info:
 
 * Campaign Name
 * Action: the action you would like to incentivize - supply to a vault or borrow from a vault
-* Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically
+* Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault
 
 <img src="../.gitbook/assets/Screenshot 2025-05-18 at 18.09.35.png" alt=""><figcaption></figcaption>
+
+To create an Aave campaign, you need to configure the following info:
+
+* Campaign Name
+* Action: the action you would like to incentivize - supply to a pool or borrow from a pool. For a lending campaign, enabling net lending is optional if you would like to set up a net lending campaign and users will only receive rewards based on their net position values in the pool
+* Pool Info: select the chain where the pool is deployed and enter the aToken address. The pool information should be displayed automatically. You may also enter the pool name if this is the first time setting up a campaign for this pool
+
+<img src="../.gitbook/assets/Screenshot 2026-02-13 at 00.02.34.png" alt=""><figcaption></figcaption>
+
+To create a Morpho campaign, you need to configure the following info:
+
+* Campaign Name
+* Action: the action you would like to incentivize - supply to a vault. Only lend campaign is currently supported for Morpho
+* Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault
+
+<img src="../.gitbook/assets/Screenshot 2026-02-13 at 00.10.11.png" alt=""><figcaption></figcaption>
+
+The following parameters may also need to be configured for Euler, Aave, and Morpho campaigns:
 
 * Campaign Start Time and End Time: select the start time and end time, you could also select to set a 7-day/14-day/30-day/90-day campaign and the campaign end time will be displayed automatically
 * Blacklist Address List: it is optional to exclude specific addresses from receiving rewards

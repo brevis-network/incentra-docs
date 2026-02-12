@@ -44,4 +44,4 @@ The following sections offer step-by-step instructions to guide you through crea
 
 * [Create a Token Holding Campaign](token-holding-campaign.md)
 * [Create a Concentrated Liquidity Campaign](concentrated-liquidity-campaign.md)
-* [Create a Lend and Borrow Campaign (Euler)](lend-and-borrow-campaign-euler.md)
+* [Create a Lend and Borrow Campaign (Euler)](lend-and-borrow-campaign.md)
