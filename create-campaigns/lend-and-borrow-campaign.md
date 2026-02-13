@@ -26,7 +26,7 @@ To create an Aave campaign, you need to configure the following info:
 
 * Campaign Name
 * Action: the action you would like to incentivize - supply to a pool or borrow from a pool.
-  * For a lending campaign, you can optionally choose to incentivize net lending, where users will only receive rewards based on their net position values in the pool. View here for detailed rules about net lending.
+  * For a lending campaign, you can optionally choose to incentivize net lending, where users will only receive rewards based on their net position values in the pool. View [here](../earn-rewards/campaign-rules.md#lend-borrow-campaign-aave) for detailed rules about net lending.
 * Pool Info: select the chain where the pool is deployed and enter the aToken address. The pool information should be displayed automatically. You should also enter the pool name if this is the first time setting up a campaign for this pool.
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-02-13 at 00.02.34.png" alt=""><figcaption></figcaption></figure>
