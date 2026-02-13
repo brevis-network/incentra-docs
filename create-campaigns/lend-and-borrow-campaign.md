@@ -33,7 +33,7 @@ To create an Aave campaign, you need to configure the following info:
 To create a Morpho campaign, you need to configure the following info:
 
 * Campaign Name
-* Action: the action you would like to incentivize - supply to a vault. Only lend campaign is currently supported for Morpho
+* Action: the action you would like to incentivize - supply to a vault. Only lend campaigns are currently supported for Morpho
 * Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-02-13 at 00.10.11.png" alt=""><figcaption></figcaption></figure>
