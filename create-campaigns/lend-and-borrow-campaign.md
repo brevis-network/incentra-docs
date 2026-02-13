@@ -18,23 +18,28 @@ To create a Euler campaign, you need to configure the following info:
 
 * Campaign Name
 * Action: the action you would like to incentivize - supply to a vault or borrow from a vault
-* Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault
+* Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-05-18 at 18.09.35.png" alt=""><figcaption></figcaption></figure>
 
 To create an Aave campaign, you need to configure the following info:
 
 * Campaign Name
-* Action: the action you would like to incentivize - supply to a pool or borrow from a pool. For a lending campaign, enabling net lending is optional if you would like to set up a net lending campaign and users will only receive rewards based on their net position values in the pool
-* Pool Info: select the chain where the pool is deployed and enter the aToken address. The pool information should be displayed automatically. You may also enter the pool name if this is the first time setting up a campaign for this pool
+* Action: the action you would like to incentivize - supply to a pool or borrow from a pool.
+  * For a lending campaign, you can optionally choose to incentivize net lending, where users will only receive rewards based on their net position values in the pool. View here for detailed rules about net lending.
+* Pool Info: select the chain where the pool is deployed and enter the aToken address. The pool information should be displayed automatically. You should also enter the pool name if this is the first time setting up a campaign for this pool.
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-02-13 at 00.02.34.png" alt=""><figcaption></figcaption></figure>
 
 To create a Morpho campaign, you need to configure the following info:
 
 * Campaign Name
-* Action: the action you would like to incentivize - supply to a vault. Only lend campaigns are currently supported for Morpho
-* Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault
+* Action: the action you would like to incentivize - supply to a vault. Only lend campaigns are currently supported for Morpho.
+* Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You should also enter the vault name if this is the first time setting up a campaign for this vault.
+
+{% hint style="info" %}
+Only Morpho v2 vault is supported at this moment.
+{% endhint %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-02-13 at 00.10.11.png" alt=""><figcaption></figcaption></figure>
 
@@ -65,11 +70,11 @@ You may also see the campaign creation is failed or campaign is creating, and co
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-05-18 at 18.03.23.png" alt=""><figcaption></figcaption></figure>
 
+Once the campaign is created, please deposit the rewards into the reward contract to enable reward distribution. You may deposit rewards while the campaign is to be started, active, or even ended. By default, the total rewards amount should be deposited.
+
 {% hint style="warning" %}
 To deposit rewards, you may also directly transfer reward tokens to the campaign contract via a simple ERC-20 transfer from a different address (e.g., a multi-sig) later.
 {% endhint %}
-
-Once the campaign is created, please deposit the rewards into the reward contract to enable reward distribution. You may deposit rewards while the campaign is to be started, active, or even ended. By default, the total rewards amount should be deposited.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-05-17 at 19.12.24.png" alt=""><figcaption></figcaption></figure>
 
