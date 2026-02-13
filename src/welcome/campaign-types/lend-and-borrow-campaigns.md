@@ -12,7 +12,7 @@ Incentra supports lending and borrowing protocols to reward users for supplying 
 
 ### Lend/Borrow Campaigns for Aave
 
-* In lending campaigns, rewards are allocated proportional to each user's time-weighted average (TWA) aToken balance in the pool. Additionally, if IncentivizeNetLending is enabled, a looping penalty is applied. View here for the detailed formula.
+* In lending campaigns, rewards are allocated proportional to each user's time-weighted average (TWA) aToken balance in the pool. Additionally, if IncentivizeNetLending is enabled, a looping penalty is applied. View [here](../../earn-rewards/campaign-rules.md#lend-borrow-campaign-aave) for the detailed formula.
 * In borrowing campaigns, rewards are allocated proportionally to each user's time-weighted average debt token balance in the pool.
 
 ### Lend Campaigns for Morpho
