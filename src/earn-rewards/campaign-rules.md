@@ -54,3 +54,25 @@ _user campaign reward in an epoch = user's average debt in the epoch / sum of av
 The average debt is calculated using samples at random points of time every 10 minutes in order to accommodate the increasing debt due to interests.
 
 **NOTE**: If the user has multiple sub-accounts, the owner account will receive the rewards for all its sub-accounts.
+
+### Lend/Borrow Campaign (Aave)
+
+In an Aave lending campaign, each supplier is allocated rewards proportional to the _Effective Supply Balance (ESB)_ for the pool in the epoch:
+
+_user campaign reward in an epoch = ESB of the user in the epoch / sum of ESB of all users in the epoch \* total campaign rewards in the epoch \* (1 - campaign fee)_
+
+Here, _campaign fee_ is the percentage of fees charged by the Incentra platform.
+
+ESB equals to Time-Weighted Average (TWA) aToken balance if the campaign does not enable "only incentivize net lending". Otherwise, ESB equals to _aToken TWA - debtToken TWA / pool LTV ratio_, which penalizes looping in the same pool.
+
+In an Aave borrow campaign, each borrower is allocated rewards proportional to the average debt (debtToken balance) for the pool in the epoch:
+
+_user campaign reward in an epoch = user's average debt in the epoch / sum of average debts of all users in the epoch \* total campaign rewards in the epoch \* (100% - campaign fee)_
+
+### Lend Campaign (Morpho)
+
+In a Morpho lending campaign, each supplier is allocated rewards proportional to the Time-Weighted Average collateral value the pool in the epoch:
+
+_user campaign reward in an epoch = collateral TWA of the user in the epoch / sum of collaterals of all users in the epoch \* total campaign rewards in the epoch \* (1 - campaign fee)_
+
+Here, _campaign fee_ is the percentage of fees charged by the Incentra platform.
