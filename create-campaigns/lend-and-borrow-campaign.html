@@ -36,7 +36,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-5c21e275.js";
+            window.path_to_searchindex_js = "../searchindex-7b471f6b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-2ab97246.js"></script>
@@ -185,22 +185,30 @@
 <ul>
 <li>Campaign Name</li>
 <li>Action: the action you would like to incentivize - supply to a vault or borrow from a vault</li>
-<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault</li>
+<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault.</li>
 </ul>
 <p><img src="../.gitbook/assets/Screenshot 2025-05-18 at 18.09.35.png" alt=""><figcaption></figcaption></p>
 <p>To create an Aave campaign, you need to configure the following info:</p>
 <ul>
 <li>Campaign Name</li>
-<li>Action: the action you would like to incentivize - supply to a pool or borrow from a pool. For a lending campaign, enabling net lending is optional if you would like to set up a net lending campaign and users will only receive rewards based on their net position values in the pool</li>
-<li>Pool Info: select the chain where the pool is deployed and enter the aToken address. The pool information should be displayed automatically. You may also enter the pool name if this is the first time setting up a campaign for this pool</li>
+<li>Action: the action you would like to incentivize - supply to a pool or borrow from a pool.
+<ul>
+<li>For a lending campaign, you can optionally choose to incentivize net lending, where users will only receive rewards based on their net position values in the pool. View here for detailed rules about net lending.</li>
+</ul>
+</li>
+<li>Pool Info: select the chain where the pool is deployed and enter the aToken address. The pool information should be displayed automatically. You should also enter the pool name if this is the first time setting up a campaign for this pool.</li>
 </ul>
 <p><img src="../.gitbook/assets/Screenshot 2026-02-13 at 00.02.34.png" alt=""><figcaption></figcaption></p>
 <p>To create a Morpho campaign, you need to configure the following info:</p>
 <ul>
 <li>Campaign Name</li>
-<li>Action: the action you would like to incentivize - supply to a vault. Only lend campaigns are currently supported for Morpho</li>
-<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault</li>
+<li>Action: the action you would like to incentivize - supply to a vault. Only lend campaigns are currently supported for Morpho.</li>
+<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You should also enter the vault name if this is the first time setting up a campaign for this vault.</li>
 </ul>
+<blockquote>
+<p><strong>Note:</strong>
+Only Morpho v2 vault is supported at this moment.</p>
+</blockquote>
 <p><img src="../.gitbook/assets/Screenshot 2026-02-13 at 00.10.11.png" alt=""><figcaption></figcaption></p>
 <p>The following parameters may also need to be configured for Euler, Aave, and Morpho campaigns:</p>
 <ul>
@@ -219,11 +227,11 @@
 <p><img src="../.gitbook/assets/Screenshot 2025-05-17 at 19.11.50.png" alt=""><figcaption></figcaption></p>
 <p>You may also see the campaign creation is failed or campaign is creating, and could retry the campaign creation in the campaign page.</p>
 <p><img src="../.gitbook/assets/Screenshot 2025-05-18 at 18.03.23.png" alt=""><figcaption></figcaption></p>
+<p>Once the campaign is created, please deposit the rewards into the reward contract to enable reward distribution. You may deposit rewards while the campaign is to be started, active, or even ended. By default, the total rewards amount should be deposited.</p>
 <blockquote>
 <p><strong>Note:</strong>
 To deposit rewards, you may also directly transfer reward tokens to the campaign contract via a simple ERC-20 transfer from a different address (e.g., a multi-sig) later.</p>
 </blockquote>
-<p>Once the campaign is created, please deposit the rewards into the reward contract to enable reward distribution. You may deposit rewards while the campaign is to be started, active, or even ended. By default, the total rewards amount should be deposited.</p>
 <p><img src="../.gitbook/assets/Screenshot 2025-05-17 at 19.12.24.png" alt=""><figcaption></figcaption></p>
 <p>Once the reward tokens are deposited, congratulations — you’re all set!</p>
 <p><img src="../.gitbook/assets/Screenshot 2025-05-17 at 19.12.55.png" alt=""><figcaption></figcaption></p>

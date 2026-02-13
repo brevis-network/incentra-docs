@@ -37,7 +37,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-5c21e275.js";
+            window.path_to_searchindex_js = "searchindex-7b471f6b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-2ab97246.js"></script>
@@ -245,11 +245,11 @@
 <p><strong>NOTE</strong>: If the user has multiple sub-accounts, the owner account will receive the rewards for all its sub-accounts.</p>
 <h3 id="lendborrow-campaigns-for-aave"><a class="header" href="#lendborrow-campaigns-for-aave">Lend/Borrow Campaigns for Aave</a></h3>
 <ul>
-<li>In lending campaigns, rewards are allocated based on each user’s share of the total time-weighted average (TWA) aToken balance among all eligible users. Additionally, if IncentivizeNetLending is enabled, a looping penalty is applied using the liquidation threshold to adjust the effective lending balance based on the user’s borrow amount.</li>
-<li>In borrowing campaigns, rewards are allocated proportionally to each user’s share of the average debt token balance within the pool.</li>
+<li>In lending campaigns, rewards are allocated proportional to each user’s time-weighted average (TWA) aToken balance in the pool. Additionally, if IncentivizeNetLending is enabled, a looping penalty is applied. View here for the detailed formula.</li>
+<li>In borrowing campaigns, rewards are allocated proportionally to each user’s time-weighted average debt token balance in the pool.</li>
 </ul>
 <h3 id="lend-campaigns-for-morpho"><a class="header" href="#lend-campaigns-for-morpho">Lend Campaigns for Morpho</a></h3>
-<p>Only lend campaigns are currently supported for Morpho. Rewards are allocated based on each user’s share of the total time-weighted average (TWA) vault shares balance among all eligible users. The vault shares represent the user’s proportional ownership of the underlying Morpho pool assets.</p>
+<p>Only lend campaigns are currently supported for Morpho. Rewards are allocated proportional to each user’s time-weighted average (TWA) vault shares balance. The vault shares represent the user’s proportional ownership of the underlying Morpho pool collaterals.</p>
 <p>Brevis fetches eToken, vault shares, and debt data directly from the blockchain, periodically updates balances for all eligible users, calculates individual rewards, and generates zero-knowledge proofs (ZKPs) to ensure the correctness of these calculations. These ZKPs are verified on-chain and the results will be utilized by the rewards distribution contracts to distribute rewards accordingly.</p>
 <p><strong>NOTE</strong>: The underlying asset token of a vault needs to be whitelisted first before the vault can be used in a campaign. Please contact us if you’d like to whitelist an asset token that isn’t currently available.</p>
 <div style="break-before: page; page-break-before: always;"></div>
@@ -384,22 +384,30 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <ul>
 <li>Campaign Name</li>
 <li>Action: the action you would like to incentivize - supply to a vault or borrow from a vault</li>
-<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault</li>
+<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault.</li>
 </ul>
 <p><img src=".gitbook/assets/Screenshot 2025-05-18 at 18.09.35.png" alt=""><figcaption></figcaption></p>
 <p>To create an Aave campaign, you need to configure the following info:</p>
 <ul>
 <li>Campaign Name</li>
-<li>Action: the action you would like to incentivize - supply to a pool or borrow from a pool. For a lending campaign, enabling net lending is optional if you would like to set up a net lending campaign and users will only receive rewards based on their net position values in the pool</li>
-<li>Pool Info: select the chain where the pool is deployed and enter the aToken address. The pool information should be displayed automatically. You may also enter the pool name if this is the first time setting up a campaign for this pool</li>
+<li>Action: the action you would like to incentivize - supply to a pool or borrow from a pool.
+<ul>
+<li>For a lending campaign, you can optionally choose to incentivize net lending, where users will only receive rewards based on their net position values in the pool. View here for detailed rules about net lending.</li>
+</ul>
+</li>
+<li>Pool Info: select the chain where the pool is deployed and enter the aToken address. The pool information should be displayed automatically. You should also enter the pool name if this is the first time setting up a campaign for this pool.</li>
 </ul>
 <p><img src=".gitbook/assets/Screenshot 2026-02-13 at 00.02.34.png" alt=""><figcaption></figcaption></p>
 <p>To create a Morpho campaign, you need to configure the following info:</p>
 <ul>
 <li>Campaign Name</li>
-<li>Action: the action you would like to incentivize - supply to a vault. Only lend campaigns are currently supported for Morpho</li>
-<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You may also enter the vault name if this is the first time setting up a campaign for this vault</li>
+<li>Action: the action you would like to incentivize - supply to a vault. Only lend campaigns are currently supported for Morpho.</li>
+<li>Vault Info: select the chain where the vault is deployed and enter the vault address. The vault information should be displayed automatically. You should also enter the vault name if this is the first time setting up a campaign for this vault.</li>
 </ul>
+<blockquote>
+<p><strong>Note:</strong>
+Only Morpho v2 vault is supported at this moment.</p>
+</blockquote>
 <p><img src=".gitbook/assets/Screenshot 2026-02-13 at 00.10.11.png" alt=""><figcaption></figcaption></p>
 <p>The following parameters may also need to be configured for Euler, Aave, and Morpho campaigns:</p>
 <ul>
@@ -418,11 +426,11 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <p><img src=".gitbook/assets/Screenshot 2025-05-17 at 19.11.50.png" alt=""><figcaption></figcaption></p>
 <p>You may also see the campaign creation is failed or campaign is creating, and could retry the campaign creation in the campaign page.</p>
 <p><img src=".gitbook/assets/Screenshot 2025-05-18 at 18.03.23.png" alt=""><figcaption></figcaption></p>
+<p>Once the campaign is created, please deposit the rewards into the reward contract to enable reward distribution. You may deposit rewards while the campaign is to be started, active, or even ended. By default, the total rewards amount should be deposited.</p>
 <blockquote>
 <p><strong>Note:</strong>
 To deposit rewards, you may also directly transfer reward tokens to the campaign contract via a simple ERC-20 transfer from a different address (e.g., a multi-sig) later.</p>
 </blockquote>
-<p>Once the campaign is created, please deposit the rewards into the reward contract to enable reward distribution. You may deposit rewards while the campaign is to be started, active, or even ended. By default, the total rewards amount should be deposited.</p>
 <p><img src=".gitbook/assets/Screenshot 2025-05-17 at 19.12.24.png" alt=""><figcaption></figcaption></p>
 <p>Once the reward tokens are deposited, congratulations — you’re all set!</p>
 <p><img src=".gitbook/assets/Screenshot 2025-05-17 at 19.12.55.png" alt=""><figcaption></figcaption></p>
@@ -455,6 +463,17 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <p><em>user campaign reward in an epoch = user’s average debt in the epoch / sum of average debts of all users in the epoch * total campaign rewards in the epoch * (100% - campaign fee)</em></p>
 <p>The average debt is calculated using samples at random points of time every 10 minutes in order to accommodate the increasing debt due to interests.</p>
 <p><strong>NOTE</strong>: If the user has multiple sub-accounts, the owner account will receive the rewards for all its sub-accounts.</p>
+<h3 id="lendborrow-campaign-aave"><a class="header" href="#lendborrow-campaign-aave">Lend/Borrow Campaign (Aave)</a></h3>
+<p>In an Aave lending campaign, each supplier is allocated rewards proportional to the <em>Effective Supply Balance (ESB)</em> for the pool in the epoch:</p>
+<p><em>user campaign reward in an epoch = ESB of the user in the epoch / sum of ESB of all users in the epoch * total campaign rewards in the epoch * (1 - campaign fee)</em></p>
+<p>Here, <em>campaign fee</em> is the percentage of fees charged by the Incentra platform.</p>
+<p>ESB equals to Time-Weighted Average (TWA) aToken balance if the campaign does not enable “only incentivize net lending”. Otherwise, ESB equals to <em>aToken TWA - debtToken TWA / pool LTV ratio</em>, which penalizes looping in the same pool.</p>
+<p>In an Aave borrow campaign, each borrower is allocated rewards proportional to the average debt (debtToken balance) for the pool in the epoch:</p>
+<p><em>user campaign reward in an epoch = user’s average debt in the epoch / sum of average debts of all users in the epoch * total campaign rewards in the epoch * (100% - campaign fee)</em></p>
+<h3 id="lend-campaign-morpho"><a class="header" href="#lend-campaign-morpho">Lend Campaign (Morpho)</a></h3>
+<p>In a Morpho lending campaign, each supplier is allocated rewards proportional to the Time-Weighted Average collateral value the pool in the epoch:</p>
+<p><em>user campaign reward in an epoch = collateral TWA of the user in the epoch / sum of collaterals of all users in the epoch * total campaign rewards in the epoch * (1 - campaign fee)</em></p>
+<p>Here, <em>campaign fee</em> is the percentage of fees charged by the Incentra platform.</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="user-tutorials"><a class="header" href="#user-tutorials">User Tutorials</a></h1>
 <p>Welcome to Brevis Incentra — <a href="https://incentra.brevis.network/">https://incentra.brevis.network/</a> — for participating in incentive campaigns and claim your rewards. To earn and claim rewards on Incentra, you will need to connect your wallet first. </p>
