@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Read and Claim Rewards - Brevis Incentra</title>
+        <title>Lend and Borrow Campaign (Morpho) - Brevis Incentra</title>
 
 
         <!-- Custom HTML head -->
@@ -13,33 +13,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="shortcut icon" href="../favicon-3f1855d8.png">
-        <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-cc69e1fb.css">
-        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+        <link rel="shortcut icon" href="../../favicon-3f1855d8.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-cc69e1fb.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
-        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
-        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-56612340.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-56612340.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../theme/custom-fc75f45e.css">
+        <link rel="stylesheet" href="../../theme/custom-fc75f45e.css">
 
 
         <!-- Provide site root and default themes to javascript -->
         <script>
-            const path_to_root = "../";
+            const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-a5dffcdc.js";
+            window.path_to_searchindex_js = "../../searchindex-a5dffcdc.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-ca711306.js"></script>
+        <script src="../../toc-ca711306.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -106,7 +106,7 @@
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
-                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
             </noscript>
             <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -141,7 +141,7 @@
                     <h1 class="menu-title">Brevis Incentra</h1>
 
                     <div class="right-buttons">
-                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
                             <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
@@ -175,273 +175,121 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="read-and-claim-rewards"><a class="header" href="#read-and-claim-rewards">Read and Claim Rewards</a></h1>
-<h2 id="same-chain-reward-claim"><a class="header" href="#same-chain-reward-claim">Same-chain reward claim</a></h2>
-<p>If the ZK-attested rewards information is submitted to the same chain that hosts the campaign for users to claim rewards, the reward claim process is straightforward: call the following functions.</p>
-<pre><code class="language-solidity">// claim reward, send reward token to the earner
-function claim(address earner) external;
-
-// claim reward, send reward token to address specified by the earner (msg.sender)
-function claimWithRecipient(address to) external;
+                        <h1 id="lend-and-borrow-campaign-morpho"><a class="header" href="#lend-and-borrow-campaign-morpho">Lend and Borrow Campaign (Morpho)</a></h1>
+<p>This page specifies the API for retrieving details about Lend/Borrow campaigns for the Morpho protocol.</p>
+<h3 id="endpoint"><a class="header" href="#endpoint">Endpoint</a></h3>
+<pre><code>POST https://incentra-prd.brevis.network/sdk/v1/morphoCampaigns
 </code></pre>
-<p>One can obtain a user’s <em>cumulative rewards and unclaimed rewards</em> through the following view functions.</p>
-<pre><code class="language-solidity">struct AddrAmt {
-    address token;
-    uint256 amount;
-}
-
-// get cumulative rewards
-function viewTotalRewards(address user) external view returns (AddrAmt[] memory) ;
-// get unclaimed rewards
-function viewUnclaimedRewards(address earner) external view returns (AddrAmt[] memory);
-</code></pre>
-<h2 id="cross-chain-reward-claim"><a class="header" href="#cross-chain-reward-claim">Cross-chain reward claim</a></h2>
-<p>To reduce the gas cost of the campaign on an expensive chain (e.g., Ethereum), we can configure the system to submit ZK-attested rewards on a more affordable chain (e.g., Optimism, Arbitrum), then bridge the Merkle root of all rewards back to the campaign chain.</p>
-<p>In this case, there are 2 contracts:</p>
-<ol>
-<li><strong>Rewards Submission contract</strong> where the ZK-proved rewards are submitted. The Rewards Submission contract builds and stores the entire reward Merkle tree.</li>
-<li><strong>Rewards Claim contract</strong> that synchronizes the Merkle root from the Rewards Submission contract. Users interact with this contract to claim their rewards by providing a Merkle proof. This contract also escrows the rewards and stores each user’s already-claimed reward amount.</li>
-</ol>
-<p><strong>To claim rewards, the user needs to</strong> </p>
-<ol>
-<li>Obtain the reward information along with the Merkle proof by calling the <a href="read-and-claim-rewards.html#get-reward-merkle-proof-api">Get Reward Merkle Proof API</a>.</li>
-<li>Submit the reward information along with the Merkle proof to the <strong>Reward Claim contract.</strong> </li>
-</ol>
-<p><strong>NOTE:</strong> There is also a “<strong>ClaimAll</strong>” contract which can help claim a user’s rewards from multiple campaigns in a single transaction. See <a href="read-and-claim-rewards.html#claim-all-rewards-in-a-single-transaction">here</a> for details.</p>
-<pre><code class="language-solidity">// claim reward, send reward token to the earner
-function claim(
-    address earner, 
-    uint256[] calldata cumulativeAmounts, 
-    uint64 epoch, 
-    bytes32[] calldata proof) external;
-
-// claim reward, send reward token to address specified by the earner (msg.sender)    
-function claimWithRecipient(
-    address to,
-    uint256[] calldata cumulativeAmounts,
-    uint64 _epoch,
-    bytes32[] calldata proof
-) external
-</code></pre>
-<p><strong>To get a user’s claimable reward amount:</strong></p>
-<p>A user’s currently claimable reward amount and the cumulative reward amount can be obtained by calling the <a href="read-and-claim-rewards.html#get-reward-merkle-proof-api">Get Reward Merkle Proof API</a> (enclosed together with the Merkle proof) or <a href="read-and-claim-rewards.html#get-reward-balance-api">Get Reward Balance API</a> (an API dedicated to display a user’s reward balances).</p>
-<h3 id="get-reward-merkle-proof-api"><a class="header" href="#get-reward-merkle-proof-api">Get Reward Merkle Proof API</a></h3>
-<p>This API returns the reward info and the corresponding Merkle proofs of a specific user in multiple campaigns that the user has participated in (i.e., has non-zero cumulative rewards in the campaign) and match the supplied filters in the request. The data included in the response can be used to call the <code>claim</code> or <code>claimWithRecipient</code> functions of the claim chain contract.</p>
-<h4 id="endpoint"><a class="header" href="#endpoint"><strong>Endpoint</strong></a></h4>
-<pre><code>POST https://incentra-prd.brevis.network/v1/getMerkleProofsBatch
-</code></pre>
-<h4 id="request-fields"><a class="header" href="#request-fields"><strong>Request Fields</strong></a></h4>
-<p>The request data should specify a user address and multiple filters for the campaign. </p>
-<p><strong>NOTE</strong>: <code>user_addr</code> is a required field while other filters are optional. If any filter is not specified in the request, it means no constraint for the filter.</p>
+<h3 id="request"><a class="header" href="#request">Request</a></h3>
 <table>
 <thead>
-<tr><th width="135.546875">Field</th><th width="177.828125">Type</th><th> Description</th></tr>
+<tr><th width="171.02734375">Field</th><th width="199.8515625">Type</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td><code>user_addr</code></td><td><code>string</code></td><td>The user address.</td></tr>
-<tr><td><code>types</code></td><td><code>[CampaignType]</code></td><td>The campaign types (the detailed enum will be specified later). </td></tr>
-<tr><td><code>chain_id</code></td><td><code>[uint64]</code></td><td>The chain IDs where the DEX pools/Euler vaults/tokens are deployed.</td></tr>
-<tr><td><code>status</code></td><td><code>[CampaignStatus]</code></td><td>
-<p>The campaign statuses with enum:<br><code>INACTIVE = 3</code></p>
-<p><code>ACTIVE = 4</code></p>
-<p><code>ENDED = 5</code></p>
-</td></tr>
-<tr><td><code>campaign_id</code></td><td><code>[string]</code></td><td>The campaign IDs.</td></tr>
+<tr><td><code>chain_id</code></td><td><code>[uint64]</code></td><td>Chain ID(s) where the targeted Morpho vault is deployed.</td></tr>
+<tr><td><code>vault_address</code></td><td><code>[string]</code></td><td>List of targeted Morpho vault contract addresses.</td></tr>
+<tr><td><code>action</code></td><td><code>[uint64]</code></td><td>Filter by campaign action type: <code>lend: 6001</code>, <code>borrow: 6002</code> .</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>[string]</code></td><td>List of specific campaign IDs to retrieve.</td></tr>
+<tr><td><code>status</code></td><td><code>[CampaignStatus]</code></td><td>Filter by campaign status (enum will be specified later)</td></tr>
+<tr><td><code>user_address</code></td><td><code>[string]</code></td><td>Retrieve campaigns where the specified user address(es) has participated.</td></tr>
 </tbody>
 </table>
 
-<p><strong><code>CampaignType</code></strong> enum:</p>
+<p>If any filter is not specified, it means there is no constraint for this filter.</p>
+<p><strong><code>CampaignStatus</code> Enum</strong></p>
+<p>The <code>CampaignStatus</code> enum has the following values:</p>
 <ul>
-<li>Liquidity campaign (Uniswap v3) = <strong>1</strong></li>
-<li>Liquidity campaign (PancakeSwap v3) = <strong>3</strong></li>
-<li>Liquidity campaign (QuickSwap v3) = <strong>5</strong></li>
-<li>Token holding campaign = <strong>1001</strong></li>
-<li>Euler borrow campaign = <strong>2001</strong></li>
-<li>Euler lend campaign = <strong>2002</strong></li>
+<li><code>DEPLOYING</code></li>
+<li><code>CREATING_FAILED</code></li>
+<li><code>INACTIVE</code></li>
+<li><code>ACTIVE</code></li>
+<li><code>ENDED</code></li>
+<li><code>DEACTIVATED</code></li>
 </ul>
-<h4 id="response-fields"><a class="header" href="#response-fields"><strong>Response Fields</strong> <a href="#response-fields" id="response-fields"></a></a></h4>
+<h3 id="response"><a class="header" href="#response">Response</a></h3>
 <table>
 <thead>
-<tr><th width="144.19140625">Field</th><th width="262.71875">Type</th><th> Description</th></tr>
+<tr><th width="225.3125">Field</th><th>Type</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td><code>err</code></td><td><code>ErrMsg</code></td><td>Error details if the request failed.</td></tr>
-<tr><td><code>rewardsBatch</code></td><td><code>[SingleCampaignMerkle]</code></td><td>An array that includes the details about rewards info and the corresponding Merkle proofs of the user in all the campaigns that user has participated in and match the filters.</td></tr>
+<tr><td><code>err</code></td><td><code>ErrMsg</code></td><td>Error message if request fails.</td></tr>
+<tr><td><code>campaigns</code></td><td><code>[MorphoCampaignInfo]</code></td><td>List of Morpho campaign details.</td></tr>
 </tbody>
 </table>
 
-<p><strong>ErrMsg Fields</strong></p>
+<p><code>CampaignInfo</code> <strong>Fields</strong></p>
 <table>
 <thead>
-<tr><th width="198.71484375">Field</th><th width="238.9609375">Type</th><th>Description</th></tr>
+<tr><th width="281.55859375">Field</th><th width="163.11328125">Type</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td><code>code</code></td><td><code>string</code></td><td>Error code</td></tr>
-<tr><td><code>msg</code></td><td><code>string</code></td><td>Error reason</td></tr>
+<tr><td><code>chain_id</code></td><td><code>uint64</code></td><td>Chain ID where the targeted Morpho vault is deployed.</td></tr>
+<tr><td><code>vault_address</code></td><td><code>string</code></td><td>Morpho vault address.</td></tr>
+<tr><td><code>action</code></td><td><code>uint64</code></td><td>Campaign action type: <code>lend: 6001</code>, <code>borrow: 6002</code> .</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>string</code></td><td>Unique identifier for the campaign.</td></tr>
+<tr><td><code>campaign_name</code></td><td><code>string</code></td><td>Campaign display name</td></tr>
+<tr><td><code>start_time</code></td><td><code>uint64</code></td><td>Campaign start timestamp.</td></tr>
+<tr><td><code>end_time</code></td><td><code>uint64</code></td><td>Campaign end timestamp.</td></tr>
+<tr><td><code>reward_info</code></td><td><code>RewardInfo</code></td><td>Details about the reward token and amount. See <code>RewardInfo</code> below.</td></tr>
+<tr><td><code>last_reward_attestation_time</code></td><td><code>uint64</code></td><td>Last campaign reward attestation timestamp.</td></tr>
+<tr><td><code>status</code></td><td><code>CampaignStatus</code></td><td>Current status of the campaign. See <code>CampaignStatus</code> enum.</td></tr>
 </tbody>
 </table>
 
-<p><strong>SingleCampaignMerkle Fields</strong></p>
+<p><code>RewardInfo</code> <strong>Fields</strong></p>
 <table>
 <thead>
-<tr><th width="205.2421875">Fileld</th><th width="151.48046875">Type</th><th>Description</th></tr>
+<tr><th width="218.54296875">Field</th><th width="118.79296875">Type</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td><code>campaignId</code></td><td><code>string</code></td><td>The campaign ID.</td></tr>
-<tr><td><code>epoch</code></td><td><code>string</code></td><td>The rewards in the Merkle tree is accumulated up to this epoch number.</td></tr>
-<tr><td><code>claimChainId</code></td><td><code>string</code></td><td>The claim chain ID.</td></tr>
-<tr><td><code>claimContractAddr</code></td><td><code>string</code></td><td>The claim contract address.</td></tr>
-<tr><td><code>cumulativeRewards</code></td><td><code>[string]</code></td><td>The cumulative reward amount earned by the user in the campaign so far.</td></tr>
-<tr><td><code>merkleProof</code></td><td><code>[string]</code></td><td>The Merkle path proof to be submitted to the claim contract.</td></tr>
-<tr><td><code>claimableRewards</code></td><td><code>string</code></td><td>The claimable reward amount of this user in the campaign.</td></tr>
+<tr><td><code>submission_chain_id</code></td><td><code>uint64</code></td><td>Campaign reward submission chain ID (see <a href="../read-and-claim-rewards.html">on-chain reward claim</a> for details).</td></tr>
+<tr><td><code>submission_contract</code></td><td><code>string</code></td><td>Campaign reward submission contract address (see <a href="../read-and-claim-rewards.html">on-chain reward claim</a> for details)</td></tr>
+<tr><td><code>claim_chain_id</code></td><td><code>uint64</code></td><td>Chain ID where rewards can be claimed.</td></tr>
+<tr><td><code>claim_contract</code></td><td><code>string</code></td><td>Reward claim contract address.</td></tr>
+<tr><td><code>token_address</code></td><td><code>string</code></td><td>Reward token address.</td></tr>
+<tr><td><code>token_symbol</code></td><td><code>string</code></td><td>Reward token symbol.</td></tr>
+<tr><td><code>reward_amt</code></td><td><code>string</code></td><td>Reward amount.</td></tr>
+<tr><td><code>reward_usd_price</code></td><td><code>string</code></td><td>USD price for the reward token.</td></tr>
+<tr><td><code>reward_per_hour</code></td><td><code>string</code></td><td>Reward amount distributed per hour.</td></tr>
+<tr><td><code>apr</code></td><td><code>float</code></td><td>The APR of the campaign (for example, 0.03 means 3% APR)</td></tr>
+<tr><td><code>tvl</code></td><td><code>float</code></td><td>The supply/borrow USD value of the vault</td></tr>
 </tbody>
 </table>
 
-<h4 id="example-request-curl"><a class="header" href="#example-request-curl">Example Request (curl)</a></h4>
-<pre><code class="language-powershell">curl --location 'https://incentra-prd.brevis.network/v1/getMerkleProofsBatch' \
---header 'Content-Type: application/json' \
---data '{
-    "user_addr": "0x0195b198088e464103e3840f52a1fa9ea81de84b",
-    "types": [
-        1001
-    ],
+<h3 id="post-example-curl"><a class="header" href="#post-example-curl">Post Example (curl)</a></h3>
+<pre><code class="language-json">{
     "chain_id": [
-        1
+        1,
     ],
-    "status": [],
-    "campaign_id": []
-}'
-</code></pre>
-<h3 id="get-reward-balance-api"><a class="header" href="#get-reward-balance-api">Get Reward Balance API</a></h3>
-<p>This API returns the cumulative and claimable reward balances of a specific user in all campaigns the user has participated in and match the specified filters.</p>
-<h4 id="endpoint-1"><a class="header" href="#endpoint-1"><strong>Endpoint</strong></a></h4>
-<pre><code>POST https://incentra-prd.brevis.network/v1/getUserRewardsBatch
-</code></pre>
-<h4 id="request-fields-1"><a class="header" href="#request-fields-1"><strong>Request Fields</strong></a></h4>
-<p>The request data should specify a user address and multiple filters for the campaign. </p>
-<p><strong>NOTE</strong>: <code>user_addr</code> is a required field while other filters are optional. If any filter is not specified in the request, it means no constraint for the filter.</p>
-<table>
-<thead>
-<tr><th width="135.546875">Field</th><th width="177.828125">Type</th><th> Description</th></tr>
-</thead>
-<tbody>
-<tr><td><code>user_addr</code></td><td><code>string</code></td><td>The user address.</td></tr>
-<tr><td><code>types</code></td><td><code>[CampaignType]</code></td><td>The campaign types (the detailed enum will be specified later). </td></tr>
-<tr><td><code>chain_id</code></td><td><code>[uint64]</code></td><td>The chain IDs where the DEX pools/Euler vaults/tokens are deployed.</td></tr>
-<tr><td><code>status</code></td><td><code>[CampaignStatus]</code></td><td>
-<p>The campaign statuses with enum:<br><code>INACTIVE = 3</code></p>
-<p><code>ACTIVE = 4</code></p>
-<p><code>ENDED = 5</code></p>
-</td></tr>
-<tr><td><code>campaign_id</code></td><td><code>[string]</code></td><td>The campaign IDs.</td></tr>
-</tbody>
-</table>
-
-<p><strong><code>CampaignType</code></strong> enum:</p>
-<ul>
-<li>Liquidity campaign (Uniswap v3) = <strong>1</strong></li>
-<li>Liquidity campaign (PancakeSwap v3) = <strong>3</strong></li>
-<li>Liquidity campaign (QuickSwap v3) = <strong>5</strong></li>
-<li>Token holding campaign = <strong>1001</strong></li>
-<li>Euler borrow campaign = <strong>2001</strong></li>
-<li>Euler lend campaign = <strong>2002</strong></li>
-</ul>
-<h4 id="response-fields-1"><a class="header" href="#response-fields-1"><strong>Response Fields</strong> <a href="#response-fields" id="response-fields"></a></a></h4>
-<table>
-<thead>
-<tr><th width="186.3046875">Field</th><th width="225.66796875">Type</th><th> Description</th></tr>
-</thead>
-<tbody>
-<tr><td><code>err</code></td><td><code>ErrMsg</code></td><td>Error details if the request failed.</td></tr>
-<tr><td><code>rewardsBatch</code></td><td><code>[SingleCampaignReward]</code></td><td>An array that contains the reward balances of the user in all the campaigns that user has participated in and match the filters.</td></tr>
-</tbody>
-</table>
-
-<p><strong>ErrMsg Fields</strong></p>
-<table>
-<thead>
-<tr><th width="185.33203125">Field</th><th width="187.03515625">Type</th><th>Description</th></tr>
-</thead>
-<tbody>
-<tr><td><code>code</code></td><td><code>string</code></td><td>Error code.</td></tr>
-<tr><td><code>msg</code></td><td><code>string</code></td><td>Error reason.</td></tr>
-</tbody>
-</table>
-
-<p><strong>SingleCampaignReward Fields</strong></p>
-<table>
-<thead>
-<tr><th width="189.17578125">Fileld</th><th width="186.65234375">Type</th><th>Description</th></tr>
-</thead>
-<tbody>
-<tr><td><code>cumulative</code></td><td><code>string</code></td><td>The cumulative reward amount earned by the user in the campaign.</td></tr>
-<tr><td><code>claimable</code></td><td><code>string</code></td><td>The claimable reward amount of the user in the campaign.</td></tr>
-<tr><td><code>campaignId</code></td><td><code>string</code></td><td>The campaign ID.</td></tr>
-<tr><td><code>claimChainId</code></td><td><code>string</code></td><td>The claim chain ID.</td></tr>
-</tbody>
-</table>
-
-<h4 id="example-request-curl-1"><a class="header" href="#example-request-curl-1">Example Request (curl)</a></h4>
-<pre><code class="language-powershell">curl --location 'https://incentra-prd.brevis.network/v1/getUserRewardsBatch' \
---header 'Content-Type: application/json' \
---data '{
-    "user_addr": "0x0195b198088e464103e3840f52a1fa9ea81de84b",
-    "types": [
-        1001
+    "atoken_address": [
+        "0xb576765fB15505433aF24FEe2c0325895C559FB2"
     ],
-    "chain_id": [
-        1
-    ],
-    "status": [],
-    "campaign_id": []
-}'
-</code></pre>
-<h2 id="claim-all-rewards-in-a-single-transaction"><a class="header" href="#claim-all-rewards-in-a-single-transaction">Claim all rewards in a single transaction</a></h2>
-<p>A user can claim all rewards from all participated campaigns on a given chain in a single transaction by calling the following functions of the <code>ClaimAll</code> contract deployed on that chain:</p>
-<pre><code class="language-solidity">// claim all same-chain rewards
-function claimAll(address earner, address[] calldata campaignAddrs) external;
+    "campaign_id": [
 
-// claim all cross-chain rewards 
-// calldata can be fetched using the getMerkleProofsBatch API
-struct CampaignReward {
-    address campaignAddr; // the campaign claim contract address
-    uint256[] cumulativeAmounts;
-    uint64 epoch;
-    bytes32[] proof;
+    ],
+    "status": [
+        4
+    ],
+    "user_address": [],
+    "action": [
+        6001,
+        6002
+    ]
 }
-function claimAll(address earner, CampaignReward[] calldata campaignRewards) external;
-
-// claim all same-chain and cross-chain rewards
-function claimAll(
-    address earner, 
-    address[] calldata sameChainCampaignAddrs, 
-    CampaignReward[] calldata crossChainCampaignRewards) external;
 </code></pre>
-<p>The currently deployed <code>ClaimAll</code> contract addresses are:</p>
-<table>
-<thead>
-<tr><th width="254.89453125">Chain</th><th>ClaimAll contract address</th></tr>
-</thead>
-<tbody>
-<tr><td>Ethereum</td><td><a href="https://etherscan.io/address/0x39ae8501186e8f4d7b120981ddad5db8915a6371">0x39ae8501186E8F4d7b120981DDaD5db8915A6371</a></td></tr>
-<tr><td>BNB Chain</td><td><a href="https://bscscan.com/address/0x3704597fdE1f11E4C87423B9246b295c31bfbb8d">0x3704597fdE1f11E4C87423B9246b295c31bfbb8d</a></td></tr>
-<tr><td>Arbitrum</td><td><a href="https://arbiscan.io/address/0x273d0d19eaC2861FCF6B21893AD6d71b018E25aB">0x273d0d19eaC2861FCF6B21893AD6d71b018E25aB</a></td></tr>
-<tr><td>World Chain</td><td><a href="https://worldscan.org/address/0xc8c741C7C4844Cd3C4B60d8dc95DF1DC452C53c6">0xc8c741C7C4844Cd3C4B60d8dc95DF1DC452C53c6</a></td></tr>
-<tr><td>Arbitrum Sepolia Testnet</td><td><a href="https://sepolia.arbiscan.io/address/0x8fa1Bd18F30e0b387E2f24279Eca033eb2a30327">0x8fa1Bd18F30e0b387E2f24279Eca033eb2a30327</a></td></tr>
-<tr><td>Base Sepolia Testnet</td><td><a href="https://sepolia.basescan.org/address/0x39ae8501186E8F4d7b120981DDaD5db8915A6371">0x39ae8501186E8F4d7b120981DDaD5db8915A6371</a></td></tr>
-</tbody>
-</table>
-
+<p>post with <code>data.json</code>:</p>
+<pre><code class="language-sh">curl -X POST -H "Content-Type: application/json" -d @data.json POST https://incentra-prd.brevis.network/sdk/v1/eulerCampaigns
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../developer-sdk/get-campaigns/lend-and-borrow-campaign-morpho.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../developer-sdk/get-campaigns/lend-and-borrow-campaign-aave.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../developer-sdk/get-user-leaderboard.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../developer-sdk/read-and-claim-rewards.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -451,11 +299,11 @@ function claimAll(
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../developer-sdk/get-campaigns/lend-and-borrow-campaign-morpho.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../developer-sdk/get-campaigns/lend-and-borrow-campaign-aave.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../developer-sdk/get-user-leaderboard.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../developer-sdk/read-and-claim-rewards.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
@@ -475,13 +323,13 @@ function claimAll(
         </script>
 
 
-        <script src="../elasticlunr-ef4e11c1.min.js"></script>
-        <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
 
-        <script src="../clipboard-1626706a.min.js"></script>
-        <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
 

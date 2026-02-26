@@ -37,10 +37,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-7b471f6b.js";
+            window.path_to_searchindex_js = "searchindex-a5dffcdc.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-2ab97246.js"></script>
+        <script src="toc-ca711306.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -851,6 +851,220 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <pre><code class="language-sh">curl -X POST -H "Content-Type: application/json" -d @data.json POST https://incentra-prd.brevis.network/sdk/v1/eulerCampaigns
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lend-and-borrow-campaign-aave"><a class="header" href="#lend-and-borrow-campaign-aave">Lend and Borrow Campaign (Aave)</a></h1>
+<p>This page specifies the API for retrieving details about Lend/Borrow campaigns for the Aave protocol.</p>
+<h3 id="endpoint-3"><a class="header" href="#endpoint-3">Endpoint</a></h3>
+<pre><code>POST https://incentra-prd.brevis.network/sdk/v1/aaveCampaigns
+</code></pre>
+<h3 id="request-3"><a class="header" href="#request-3">Request</a></h3>
+<table>
+<thead>
+<tr><th width="171.02734375">Field</th><th width="199.8515625">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>chain_id</code></td><td><code>[uint64]</code></td><td>Chain ID(s) where the targeted Aave vault is deployed.</td></tr>
+<tr><td><code>atoken_address</code></td><td><code>[string]</code></td><td>List of targeted Aave atoken contract addresses.</td></tr>
+<tr><td><code>action</code></td><td><code>[uint64]</code></td><td>Filter by campaign action type: <code>lend: 5001</code>, <code>borrow: 5002</code> , <code>lend_net: 5003</code>.</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>[string]</code></td><td>List of specific campaign IDs to retrieve.</td></tr>
+<tr><td><code>status</code></td><td><code>[CampaignStatus]</code></td><td>Filter by campaign status (enum will be specified later)</td></tr>
+<tr><td><code>user_address</code></td><td><code>[string]</code></td><td>Retrieve campaigns where the specified user address(es) has participated.</td></tr>
+</tbody>
+</table>
+
+<p>If any filter is not specified, it means there is no constraint for this filter.</p>
+<p><strong><code>CampaignStatus</code> Enum</strong></p>
+<p>The <code>CampaignStatus</code> enum has the following values:</p>
+<ul>
+<li><code>DEPLOYING</code></li>
+<li><code>CREATING_FAILED</code></li>
+<li><code>INACTIVE</code></li>
+<li><code>ACTIVE</code></li>
+<li><code>ENDED</code></li>
+<li><code>DEACTIVATED</code></li>
+</ul>
+<h3 id="response-3"><a class="header" href="#response-3">Response</a></h3>
+<table>
+<thead>
+<tr><th width="225.3125">Field</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>err</code></td><td><code>ErrMsg</code></td><td>Error message if request fails.</td></tr>
+<tr><td><code>campaigns</code></td><td><code>[AaveCampaignInfo]</code></td><td>List of Aave campaign details.</td></tr>
+</tbody>
+</table>
+
+<p><code>AaveCampaignInfo</code> <strong>Fields</strong></p>
+<table>
+<thead>
+<tr><th width="281.55859375">Field</th><th width="163.11328125">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>chain_id</code></td><td><code>uint64</code></td><td>Chain ID where the targeted Aave atoken is deployed.</td></tr>
+<tr><td><code>vault_address</code></td><td><code>string</code></td><td>Aave atoken address.</td></tr>
+<tr><td><code>action</code></td><td><code>uint64</code></td><td>Campaign action type: <code>lend: 5001</code>, <code>borrow: 5002</code> , <code>lend_net: 5003</code>.</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>string</code></td><td>Unique identifier for the campaign.</td></tr>
+<tr><td><code>campaign_name</code></td><td><code>string</code></td><td>Campaign display name</td></tr>
+<tr><td><code>start_time</code></td><td><code>uint64</code></td><td>Campaign start timestamp.</td></tr>
+<tr><td><code>end_time</code></td><td><code>uint64</code></td><td>Campaign end timestamp.</td></tr>
+<tr><td><code>reward_info</code></td><td><code>RewardInfo</code></td><td>Details about the reward token and amount. See <code>RewardInfo</code> below.</td></tr>
+<tr><td><code>last_reward_attestation_time</code></td><td><code>uint64</code></td><td>Last campaign reward attestation timestamp.</td></tr>
+<tr><td><code>status</code></td><td><code>CampaignStatus</code></td><td>Current status of the campaign. See <code>CampaignStatus</code> enum.</td></tr>
+</tbody>
+</table>
+
+<p><code>RewardInfo</code> <strong>Fields</strong></p>
+<table>
+<thead>
+<tr><th width="218.54296875">Field</th><th width="118.79296875">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>submission_chain_id</code></td><td><code>uint64</code></td><td>Campaign reward submission chain ID (see <a href="#read-and-claim-rewards">on-chain reward claim</a> for details).</td></tr>
+<tr><td><code>submission_contract</code></td><td><code>string</code></td><td>Campaign reward submission contract address (see <a href="#read-and-claim-rewards">on-chain reward claim</a> for details)</td></tr>
+<tr><td><code>claim_chain_id</code></td><td><code>uint64</code></td><td>Chain ID where rewards can be claimed.</td></tr>
+<tr><td><code>claim_contract</code></td><td><code>string</code></td><td>Reward claim contract address.</td></tr>
+<tr><td><code>token_address</code></td><td><code>string</code></td><td>Reward token address.</td></tr>
+<tr><td><code>token_symbol</code></td><td><code>string</code></td><td>Reward token symbol.</td></tr>
+<tr><td><code>reward_amt</code></td><td><code>string</code></td><td>Reward amount.</td></tr>
+<tr><td><code>reward_usd_price</code></td><td><code>string</code></td><td>USD price for the reward token.</td></tr>
+<tr><td><code>reward_per_hour</code></td><td><code>string</code></td><td>Reward amount distributed per hour.</td></tr>
+<tr><td><code>apr</code></td><td><code>float</code></td><td>The APR of the campaign (for example, 0.03 means 3% APR)</td></tr>
+<tr><td><code>tvl</code></td><td><code>float</code></td><td>The supply/borrow USD value of the vault</td></tr>
+</tbody>
+</table>
+
+<h3 id="post-example-curl-1"><a class="header" href="#post-example-curl-1">Post Example (curl)</a></h3>
+<pre><code class="language-json">{
+    "chain_id": [
+        1,
+        42161
+    ],
+    "atoken_address": [
+        "0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8"
+    ],
+    "campaign_id": [
+
+    ],
+    "status": [
+        4
+    ],
+    "user_address": [],
+    "action": [
+        5001,
+        5002,
+        5003
+    ]
+}
+</code></pre>
+<p>post with <code>data.json</code>:</p>
+<pre><code class="language-sh">curl -X POST -H "Content-Type: application/json" -d @data.json POST https://incentra-prd.brevis.network/sdk/v1/aaveCampaigns
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="lend-and-borrow-campaign-morpho"><a class="header" href="#lend-and-borrow-campaign-morpho">Lend and Borrow Campaign (Morpho)</a></h1>
+<p>This page specifies the API for retrieving details about Lend/Borrow campaigns for the Morpho protocol.</p>
+<h3 id="endpoint-4"><a class="header" href="#endpoint-4">Endpoint</a></h3>
+<pre><code>POST https://incentra-prd.brevis.network/sdk/v1/morphoCampaigns
+</code></pre>
+<h3 id="request-4"><a class="header" href="#request-4">Request</a></h3>
+<table>
+<thead>
+<tr><th width="171.02734375">Field</th><th width="199.8515625">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>chain_id</code></td><td><code>[uint64]</code></td><td>Chain ID(s) where the targeted Morpho vault is deployed.</td></tr>
+<tr><td><code>vault_address</code></td><td><code>[string]</code></td><td>List of targeted Morpho vault contract addresses.</td></tr>
+<tr><td><code>action</code></td><td><code>[uint64]</code></td><td>Filter by campaign action type: <code>lend: 6001</code>, <code>borrow: 6002</code> .</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>[string]</code></td><td>List of specific campaign IDs to retrieve.</td></tr>
+<tr><td><code>status</code></td><td><code>[CampaignStatus]</code></td><td>Filter by campaign status (enum will be specified later)</td></tr>
+<tr><td><code>user_address</code></td><td><code>[string]</code></td><td>Retrieve campaigns where the specified user address(es) has participated.</td></tr>
+</tbody>
+</table>
+
+<p>If any filter is not specified, it means there is no constraint for this filter.</p>
+<p><strong><code>CampaignStatus</code> Enum</strong></p>
+<p>The <code>CampaignStatus</code> enum has the following values:</p>
+<ul>
+<li><code>DEPLOYING</code></li>
+<li><code>CREATING_FAILED</code></li>
+<li><code>INACTIVE</code></li>
+<li><code>ACTIVE</code></li>
+<li><code>ENDED</code></li>
+<li><code>DEACTIVATED</code></li>
+</ul>
+<h3 id="response-4"><a class="header" href="#response-4">Response</a></h3>
+<table>
+<thead>
+<tr><th width="225.3125">Field</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>err</code></td><td><code>ErrMsg</code></td><td>Error message if request fails.</td></tr>
+<tr><td><code>campaigns</code></td><td><code>[MorphoCampaignInfo]</code></td><td>List of Morpho campaign details.</td></tr>
+</tbody>
+</table>
+
+<p><code>CampaignInfo</code> <strong>Fields</strong></p>
+<table>
+<thead>
+<tr><th width="281.55859375">Field</th><th width="163.11328125">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>chain_id</code></td><td><code>uint64</code></td><td>Chain ID where the targeted Morpho vault is deployed.</td></tr>
+<tr><td><code>vault_address</code></td><td><code>string</code></td><td>Morpho vault address.</td></tr>
+<tr><td><code>action</code></td><td><code>uint64</code></td><td>Campaign action type: <code>lend: 6001</code>, <code>borrow: 6002</code> .</td></tr>
+<tr><td><code>campaign_id</code></td><td><code>string</code></td><td>Unique identifier for the campaign.</td></tr>
+<tr><td><code>campaign_name</code></td><td><code>string</code></td><td>Campaign display name</td></tr>
+<tr><td><code>start_time</code></td><td><code>uint64</code></td><td>Campaign start timestamp.</td></tr>
+<tr><td><code>end_time</code></td><td><code>uint64</code></td><td>Campaign end timestamp.</td></tr>
+<tr><td><code>reward_info</code></td><td><code>RewardInfo</code></td><td>Details about the reward token and amount. See <code>RewardInfo</code> below.</td></tr>
+<tr><td><code>last_reward_attestation_time</code></td><td><code>uint64</code></td><td>Last campaign reward attestation timestamp.</td></tr>
+<tr><td><code>status</code></td><td><code>CampaignStatus</code></td><td>Current status of the campaign. See <code>CampaignStatus</code> enum.</td></tr>
+</tbody>
+</table>
+
+<p><code>RewardInfo</code> <strong>Fields</strong></p>
+<table>
+<thead>
+<tr><th width="218.54296875">Field</th><th width="118.79296875">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>submission_chain_id</code></td><td><code>uint64</code></td><td>Campaign reward submission chain ID (see <a href="#read-and-claim-rewards">on-chain reward claim</a> for details).</td></tr>
+<tr><td><code>submission_contract</code></td><td><code>string</code></td><td>Campaign reward submission contract address (see <a href="#read-and-claim-rewards">on-chain reward claim</a> for details)</td></tr>
+<tr><td><code>claim_chain_id</code></td><td><code>uint64</code></td><td>Chain ID where rewards can be claimed.</td></tr>
+<tr><td><code>claim_contract</code></td><td><code>string</code></td><td>Reward claim contract address.</td></tr>
+<tr><td><code>token_address</code></td><td><code>string</code></td><td>Reward token address.</td></tr>
+<tr><td><code>token_symbol</code></td><td><code>string</code></td><td>Reward token symbol.</td></tr>
+<tr><td><code>reward_amt</code></td><td><code>string</code></td><td>Reward amount.</td></tr>
+<tr><td><code>reward_usd_price</code></td><td><code>string</code></td><td>USD price for the reward token.</td></tr>
+<tr><td><code>reward_per_hour</code></td><td><code>string</code></td><td>Reward amount distributed per hour.</td></tr>
+<tr><td><code>apr</code></td><td><code>float</code></td><td>The APR of the campaign (for example, 0.03 means 3% APR)</td></tr>
+<tr><td><code>tvl</code></td><td><code>float</code></td><td>The supply/borrow USD value of the vault</td></tr>
+</tbody>
+</table>
+
+<h3 id="post-example-curl-2"><a class="header" href="#post-example-curl-2">Post Example (curl)</a></h3>
+<pre><code class="language-json">{
+    "chain_id": [
+        1,
+    ],
+    "atoken_address": [
+        "0xb576765fB15505433aF24FEe2c0325895C559FB2"
+    ],
+    "campaign_id": [
+
+    ],
+    "status": [
+        4
+    ],
+    "user_address": [],
+    "action": [
+        6001,
+        6002
+    ]
+}
+</code></pre>
+<p>post with <code>data.json</code>:</p>
+<pre><code class="language-sh">curl -X POST -H "Content-Type: application/json" -d @data.json POST https://incentra-prd.brevis.network/sdk/v1/eulerCampaigns
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
 <h1 id="read-and-claim-rewards"><a class="header" href="#read-and-claim-rewards">Read and Claim Rewards</a></h1>
 <h2 id="same-chain-reward-claim"><a class="header" href="#same-chain-reward-claim">Same-chain reward claim</a></h2>
 <p>If the ZK-attested rewards information is submitted to the same chain that hosts the campaign for users to claim rewards, the reward claim process is straightforward: call the following functions.</p>
@@ -903,7 +1117,7 @@ function claimWithRecipient(
 <p>A user’s currently claimable reward amount and the cumulative reward amount can be obtained by calling the <a href="#get-reward-merkle-proof-api">Get Reward Merkle Proof API</a> (enclosed together with the Merkle proof) or <a href="#get-reward-balance-api">Get Reward Balance API</a> (an API dedicated to display a user’s reward balances).</p>
 <h3 id="get-reward-merkle-proof-api"><a class="header" href="#get-reward-merkle-proof-api">Get Reward Merkle Proof API</a></h3>
 <p>This API returns the reward info and the corresponding Merkle proofs of a specific user in multiple campaigns that the user has participated in (i.e., has non-zero cumulative rewards in the campaign) and match the supplied filters in the request. The data included in the response can be used to call the <code>claim</code> or <code>claimWithRecipient</code> functions of the claim chain contract.</p>
-<h4 id="endpoint-3"><a class="header" href="#endpoint-3"><strong>Endpoint</strong></a></h4>
+<h4 id="endpoint-5"><a class="header" href="#endpoint-5"><strong>Endpoint</strong></a></h4>
 <pre><code>POST https://incentra-prd.brevis.network/v1/getMerkleProofsBatch
 </code></pre>
 <h4 id="request-fields"><a class="header" href="#request-fields"><strong>Request Fields</strong></a></h4>
@@ -1111,7 +1325,7 @@ function claimAll(
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="get-user-leaderboard"><a class="header" href="#get-user-leaderboard">Get User Leaderboard</a></h1>
 <p>Retrieve a CSV file that displays all the users who have rewards in the campaign and their cumulative rewards by a given Campaign ID.</p>
-<h3 id="endpoint-4"><a class="header" href="#endpoint-4"> Endpoint</a></h3>
+<h3 id="endpoint-6"><a class="header" href="#endpoint-6"> Endpoint</a></h3>
 <pre><code>GET  https://incentra-prd.brevis.network/sdk/v1/userRewards
 </code></pre>
 <h3 id="example-curl"><a class="header" href="#example-curl">Example (curl)</a></h3>
