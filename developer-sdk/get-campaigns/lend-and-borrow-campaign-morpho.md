@@ -70,5 +70,5 @@ The `CampaignStatus` enum has the following values:
 post with `data.json`:
 
 ```sh
-curl -X POST -H "Content-Type: application/json" -d @data.json POST https://incentra-prd.brevis.network/sdk/v1/eulerCampaigns
+curl -X POST -H "Content-Type: application/json" -d @data.json POST https://incentra-prd.brevis.network/sdk/v1/morphoCampaigns
 ```
