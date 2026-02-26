@@ -37,10 +37,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-c7158c77.js";
+            window.path_to_searchindex_js = "searchindex-85f50b13.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-ca711306.js"></script>
+        <script src="toc-0a0acf31.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -959,8 +959,8 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <pre><code class="language-sh">curl -X POST -H "Content-Type: application/json" -d @data.json POST https://incentra-prd.brevis.network/sdk/v1/aaveCampaigns
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="lend-and-borrow-campaign-morpho"><a class="header" href="#lend-and-borrow-campaign-morpho">Lend and Borrow Campaign (Morpho)</a></h1>
-<p>This page specifies the API for retrieving details about Lend/Borrow campaigns for the Morpho protocol.</p>
+<h1 id="lend-campaign-morpho-1"><a class="header" href="#lend-campaign-morpho-1">Lend Campaign (Morpho)</a></h1>
+<p>This page specifies the API for retrieving details about Lend campaigns for the Morpho protocol.</p>
 <h3 id="endpoint-4"><a class="header" href="#endpoint-4">Endpoint</a></h3>
 <pre><code>POST https://incentra-prd.brevis.network/sdk/v1/morphoCampaigns
 </code></pre>
@@ -972,7 +972,7 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <tbody>
 <tr><td><code>chain_id</code></td><td><code>[uint64]</code></td><td>Chain ID(s) where the targeted Morpho vault is deployed.</td></tr>
 <tr><td><code>vault_address</code></td><td><code>[string]</code></td><td>List of targeted Morpho vault contract addresses.</td></tr>
-<tr><td><code>action</code></td><td><code>[uint64]</code></td><td>Filter by campaign action type: <code>lend: 6001</code>, <code>borrow: 6002</code> .</td></tr>
+<tr><td><code>action</code></td><td><code>[uint64]</code></td><td>Filter by campaign action type: <code>lend: 6001</code> .</td></tr>
 <tr><td><code>campaign_id</code></td><td><code>[string]</code></td><td>List of specific campaign IDs to retrieve.</td></tr>
 <tr><td><code>status</code></td><td><code>[CampaignStatus]</code></td><td>Filter by campaign status (enum will be specified later)</td></tr>
 <tr><td><code>user_address</code></td><td><code>[string]</code></td><td>Retrieve campaigns where the specified user address(es) has participated.</td></tr>
@@ -1009,7 +1009,7 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <tbody>
 <tr><td><code>chain_id</code></td><td><code>uint64</code></td><td>Chain ID where the targeted Morpho vault is deployed.</td></tr>
 <tr><td><code>vault_address</code></td><td><code>string</code></td><td>Morpho vault address.</td></tr>
-<tr><td><code>action</code></td><td><code>uint64</code></td><td>Campaign action type: <code>lend: 6001</code>, <code>borrow: 6002</code> .</td></tr>
+<tr><td><code>action</code></td><td><code>uint64</code></td><td>Campaign action type: <code>lend: 6001</code>.</td></tr>
 <tr><td><code>campaign_id</code></td><td><code>string</code></td><td>Unique identifier for the campaign.</td></tr>
 <tr><td><code>campaign_name</code></td><td><code>string</code></td><td>Campaign display name</td></tr>
 <tr><td><code>start_time</code></td><td><code>uint64</code></td><td>Campaign start timestamp.</td></tr>
@@ -1036,7 +1036,7 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
 <tr><td><code>reward_usd_price</code></td><td><code>string</code></td><td>USD price for the reward token.</td></tr>
 <tr><td><code>reward_per_hour</code></td><td><code>string</code></td><td>Reward amount distributed per hour.</td></tr>
 <tr><td><code>apr</code></td><td><code>float</code></td><td>The APR of the campaign (for example, 0.03 means 3% APR)</td></tr>
-<tr><td><code>tvl</code></td><td><code>float</code></td><td>The supply/borrow USD value of the vault</td></tr>
+<tr><td><code>tvl</code></td><td><code>float</code></td><td>The supply USD value of the vault</td></tr>
 </tbody>
 </table>
 
@@ -1057,7 +1057,6 @@ To deposit rewards, you may also directly transfer reward tokens to the campaign
     "user_address": [],
     "action": [
         6001,
-        6002
     ]
 }
 </code></pre>
