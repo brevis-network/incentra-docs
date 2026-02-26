@@ -31,7 +31,7 @@
   * [Token Holding Campaign](developer-sdk/get-campaigns/token-holding-campaign.md)
   * [Lend and Borrow Campaign (Euler)](developer-sdk/get-campaigns/lend-and-borrow-campaign-euler.md)
   * [Lend and Borrow Campaign (Aave)](developer-sdk/get-campaigns/lend-and-borrow-campaign-aave.md)
-  * [Lend and Borrow Campaign (Morpho)](developer-sdk/get-campaigns/lend-and-borrow-campaign-morpho.md)
+  * [Lend Campaign (Morpho)](developer-sdk/get-campaigns/lend-campaign-morpho.md)
 * [Read and Claim Rewards](developer-sdk/read-and-claim-rewards.md)
 * [Get User Leaderboard](developer-sdk/get-user-leaderboard.md)
 
